@@ -19,4 +19,7 @@ function x = bisez(f,a,b,tolx)
             fa = fx;
         end
     end
+    if abs(x1-x0)>tolx,
+    error('metodo non converge');
+    end
 end
