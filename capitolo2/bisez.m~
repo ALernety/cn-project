@@ -1,0 +1,11 @@
+function sol = bisez(f,a,b,tolx)
+    imax =  ceil(log2(b-a) - log2(tolx));
+    fa = feval(f,a);
+    fb = feval(f,b);
+    if(fa * fb > 0 )
+        error('Il metodo di bisezione non puo essere utilizzato in questo caso!')
+    end
+    for i = 1:imax
+        
+    end
+end
