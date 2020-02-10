@@ -1,4 +1,5 @@
 function x = bisez(f,a,b,tolx)
+    format long e
     imax =  ceil(log2(b-a) - log2(tolx));
     fa = feval(f,a);
     fb = feval(f,b);
