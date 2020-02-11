@@ -1,8 +1,8 @@
-function [x,flag] = newton( f, f1, x0, tolx, maxit )
+function [x,flag] = aitken( f, f1, x0, tolx, maxit )
        %
-       % [x,flag] = newton( f, f1, x0, tolx [, maxit] )
+       % [x,flag] = aitken( f, f1, x0, tolx [, maxit] )
        %
-       % Metodo di Newton per determinare una approssimazione
+       % Metodo di accelerazione di Aitken per determinare una approssimazione
        % della radice di f(x)=0 con tolleranza (mista) tolx, a
        % partire da x0, entro maxit iterationi (default = 100).
        1
@@ -23,12 +23,19 @@ function [x,flag] = newton( f, f1, x0, tolx, maxit )
        x = x0;
        flag = -1;
        for i = 1:maxit
-              fx = feval( f, x );
-              f1x = feval( f1, x );
+              fx = feval( f, x0 );
+              f1x = feval( f1, x0 );
               if f1x==0 
                      break; 
               end
-              x = x - fx/f1x;
+              x1 = x0 - fx/f1x;
+              fx = feval( f, x1 );
+              f1x = feval( f1, x1 );
+              if f1x==0 
+                     break; 
+              end
+              x = x1 -fx/f1x;
+              x = (x*x0-x1^2)/(x-2*x1+x0);
               if abs(x-x0)<=tolx*(1+abs(x0))
                      flag = i; 
                      break;
@@ -36,5 +43,7 @@ function [x,flag] = newton( f, f1, x0, tolx, maxit )
                      x0 = x;
               end
        end
-
+       if abs(x-x0) > tolx*(1+abs(x0))
+              error('metodo non converge');
+       end
 end

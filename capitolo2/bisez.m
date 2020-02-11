@@ -1,16 +1,18 @@
-function x = bisez(f,a,b,tolx)
+function [x,flag] = bisez(f,a,b,tolx)
     format long e
-    imax =  ceil(log2(b-a) - log2(tolx));
     fa = feval(f,a);
     fb = feval(f,b);
     if(fa * fb > 0 )
-        error('Il metodo di bisezione non puo essere utilizzato in questo caso!')
+        error('Il metodo di bisezione non puo essere utilizzato in questo caso!');
     end
+    imax =  ceil(log2(b-a) - log2(tolx));
+    flag = -1;
     for i = 1:imax
         x = (a+b)/2;
         fx = feval(f,x);
         f1x = abs((fb-fa)/(b-a));
         if abs(fx) <= tolx*f1x
+            flag = i;
             break
         elseif fa*fx<0
             b = x;
@@ -20,5 +22,4 @@ function x = bisez(f,a,b,tolx)
             fa = fx;
         end
     end
-    
 end

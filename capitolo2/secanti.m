@@ -1,4 +1,4 @@
-function [x,flag] = newton( f, f1, x0, tolx, maxit )
+function [x,flag] = secanti( f, f1, x0, tolx, maxit )
        %
        % [x,flag] = newton( f, f1, x0, tolx [, maxit] )
        %
@@ -20,21 +20,25 @@ function [x,flag] = newton( f, f1, x0, tolx, maxit )
        if tolx<eps 
               error('tolleranza non idonea');
        end
-       x = x0;
+       fx = feval(f,x0);
+       f1x = feval(f1,x0);
+       x = x0-fx/f1x;
        flag = -1;
        for i = 1:maxit
-              fx = feval( f, x );
-              f1x = feval( f1, x );
-              if f1x==0 
-                     break; 
-              end
-              x = x - fx/f1x;
               if abs(x-x0)<=tolx*(1+abs(x0))
                      flag = i; 
                      break;
-              else 
-                     x0 = x;
               end
+              fx0 = fx;
+              fx = feval( f, x );
+              if fx-fx0 ==0 
+                     break; 
+              end
+              x1 =(fx*x0-fx0*x)/(fx-fx0);
+              x0 = x;
+              x = x1;
        end
-
+       if abs(x-x0) > tolx*(1+abs(x0))
+              error('metodo non converge');
+       end
 end

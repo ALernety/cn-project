@@ -5,7 +5,7 @@ function x1=radn(n,x)
 % radice n-esima di un numero positivo x  
 %
 imax=1000;
-tolx=eps;
+tolx=eps;   
 if x<=0
     error('valore in ingresso errato');
 end
