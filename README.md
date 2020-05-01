@@ -27,7 +27,7 @@ esercizi per elaborato calcolo numerico
     3. Exercise 13 - :x:
     3. Exercise 14 - :x:
 # Chapter 4
-    4. Exercise 15 :x:
+    4. Exercise 15 - :x:
     4. Exercise 16 - :x:
     4. Exercise 17 - :x:
     4. Exercise 18 - :x:
