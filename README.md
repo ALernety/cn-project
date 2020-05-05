@@ -27,7 +27,7 @@ esercizi per elaborato calcolo numerico
     3. Exercise 9 - :x:
     3. Exercise 10 - :x:
     3. Exercise 11 - :heavy_check_mark:
-    3. Exercise 12 - :x:
+    3. Exercise 12 - :heavy_check_mark:
     3. Exercise 13 - :x:
     3. Exercise 14 - :x:
 
