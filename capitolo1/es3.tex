@@ -1,0 +1,8 @@
+\subsection{Esercizio 3}
+Quando si esegue $a-a+b$ il risultato è $100$ mentre quando si esegue $a+b-a$ si ottiene $0$. La differenza dei risultati è dovuta al fenomeno della cancellazione
+numerica:
+\begin{itemize}
+    \item nel primo caso la sottrazione avviene sullo stesso numero $a=1e20$. Sottrare un numero da se stesso ha sempre risultato esatto $0$.
+    \item nel secondo caso la sottrazione avviente tra i termini $a+b = 1e20 + 100$ e $a = 100$. Poichè 1e20 è molto più grande di 100, a+b è ''quasi uguale'' ad a.
+La sottrazione amplifica gli errori di approssimazione causati dalla rappresentazione in aritmetica finita dei numeri coinvolti. A causa di questi errori il calcolatore approssima la differenza con $0$.
+\end{itemize}
