@@ -15,6 +15,7 @@ esercizi per elaborato calcolo numerico
     1. Exercise 3 - :heavy_exclamation_mark:
 
 2. **Chapter 2**
+    
     2. Exercise 4 - :heavy_exclamation_mark:
     2. Exercise 5 - :heavy_exclamation_mark:
     2. Exercise 6 - :x:
