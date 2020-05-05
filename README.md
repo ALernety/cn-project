@@ -1,9 +1,9 @@
 # elaboratoCalcolo
 esercizi per elaborato calcolo numerico
 
-#RIASSUNTO 
+## RIASSUNTO 
 
-###List of chapters and relative exercises###
+### list of chapters and relative exercises ###
 
 :heavy_check_mark: Done.
 :heavy_exclamation_mark: : To be revised.
