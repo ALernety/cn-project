@@ -5,7 +5,7 @@ function [x,flag] = newton( f, f1, x0, tolx, maxit )
        % Metodo di Newton per determinare una approssimazione
        % della radice di f(x)=0 con tolleranza (mista) tolx, a
        % partire da x0, entro maxit iterationi (default = 100).
-       1
+       %
        % f1 implementa f’(x) mentre in uscita flag vale -1, se
        % la tolleranza non `e soddisfatta entro maxit iterate o
        % la derivata si annulla, altrimenti ritorna il numero

@@ -19,7 +19,7 @@ function QR = myqr(A)
         QR(i,i) = alfa;
         QR(i+1:m,i) = QR(i+1:m,i)/v1;
         beta = -v1/alfa;
-        v = [1:QR(i+1:m,i)];
+        v = [1; QR(i+1:m,i)];
         QR(i:m,i+1:n) = QR(i:m,i+1:n) - (beta * v) * (v' * QR(i:m,i+1:n));
     end
 end
