@@ -14,36 +14,37 @@ esercizi per elaborato calcolo numerico
     1. Exercise 2 - :heavy_exclamation_mark:
     1. Exercise 3 - :heavy_exclamation_mark:
 
-
 2. **Chapter 2**
-    
     2. Exercise 4 - :heavy_exclamation_mark:
     2. Exercise 5 - :heavy_exclamation_mark:
     2. Exercise 6 - :x:
     2. Exercise 7 - :x:
 
 3. **Chapter 3**
-    Exercise 8 - :heavy_check_mark:
-    Exercise 9 - :x:
-    Exercise 10 - :x:
-    Exercise 11 - :heavy_check_mark:
-    Exercise 12 - :x:
-    Exercise 13 - :x:
-    Exercise 14 - :x:
+    
+    3. Exercise 8 - :heavy_check_mark:
+    3. Exercise 9 - :x:
+    3. Exercise 10 - :x:
+    3. Exercise 11 - :heavy_check_mark:
+    3. Exercise 12 - :x:
+    3. Exercise 13 - :x:
+    3. Exercise 14 - :x:
 
 4. **Chapter 4**
-    Exercise 15 - :x:
-    Exercise 16 - :x:
-    Exercise 17 - :x:
-    Exercise 18 - :x:
-    Exercise 19 - :x:
-    Exercise 20 - :x:
+    
+    4. Exercise 15 - :x:
+    4. Exercise 16 - :x:
+    4. Exercise 17 - :x:
+    4. Exercise 18 - :x:
+    4. Exercise 19 - :x:
+    4. Exercise 20 - :x:
 
 
 5. **Chapter 5**
-     Exercise 21 - :x:
-     Exercise 22 - :x:
-     Exercise 23 - :x:
-     Exercise 24 - :x:
-     Exercise 25 - :x:
+     
+     5. Exercise 21 - :x:
+     5. Exercise 22 - :x:
+     5. Exercise 23 - :x:
+     5. Exercise 24 - :x:
+     5. Exercise 25 - :x:
    
