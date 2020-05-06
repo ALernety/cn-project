@@ -1,18 +1,19 @@
-function [x,flag] = bisez(f,a,b,tolx)
+function [x,i] = bisez(f,a,b,tolx)
+    %
+    % [x, i] = bisez(f, a, b, tolx)
+    % calcola la radice di f(x) utilizzando il metodo di bisezione sull'intervallo [a, b]
     format long e
     fa = feval(f,a);
     fb = feval(f,b);
     if(fa * fb > 0 )
-        error('Il metodo di bisezione non puo essere utilizzato in questo caso!');
+        error('gli estremi  hanno lo stesso segno');
     end
     imax =  ceil(log2(b-a) - log2(tolx));
-    flag = -1;
     for i = 1:imax
         x = (a+b)/2;
         fx = feval(f,x);
         f1x = abs((fb-fa)/(b-a));
         if abs(fx) <= tolx*f1x
-            flag = i;
             break
         elseif fa*fx<0
             b = x;

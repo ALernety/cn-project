@@ -25,7 +25,7 @@ function [x,flag] = aitken( f, f1, x0, tolx, maxit )
        for i = 1:maxit
               fx = feval( f, x0 );
               f1x = feval( f1, x0 );
-              if f1x==0 
+              if fx==0 
                      break; 
               end
               x1 = x0 - fx/f1x;
