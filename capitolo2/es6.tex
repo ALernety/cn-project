@@ -1,49 +1,28 @@
 \subsection{Esercizio 6}
 \lstinputlisting[language=Matlab]{capitolo2/es6.m}
-Eseguendo questo codice si ottengono i seguenti risultati:
-\begin{itemize}
-    \item tolleranza = $10^{-3}$
-    \begin{tabular}{|l|l|l|}
+Eseguendo lo script si ottengono i seguenti risultati:\\\\
+\begin{tabular}{|c|l|l|l|}
         \hline
-        Metodo & Valore & iterazioni \\
+        Tolleranza & Metodo & Valore & iterazioni \\
         \hline
-        Bisezione &  0.7382812500000000 & 8\\
-        Newton & 0.7390851333852840 & 4\\
-        Secanti &  0.7390851332150012 & 5\\
-        Corde & 0.7395672022122561 &  17\\
+        & Bisezione &  0.7382812500000000 & 8\\ \cline{2-4}
+        $10^{-3}$  & Newton & 0.7390851333852840 & 4\\ \cline{2-4}
+        & Secanti &  0.7390851332150012 & 5\\ \cline{2-4}
+        & Corde & 0.7395672022122561 &  17\\ \cline{2-4}
         \hline
-    \end{tabular}
-    \item tolleranza = $10^{-6}$
-    \begin{tabular}{|l|l|l|}
+        & Bisezione &  0.7390842437744141 & 19\\ \cline{2-4}
+        $10^{-6}$ & Newton & 0.7390851332151607 &  5\\ \cline{2-4}
+        & Secanti &  0.7390851332151607 & 6\\ \cline{2-4}
+        & Corde &  0.7390845495752126 &  34 \\ \cline{2-4}
         \hline
-        Metodo & Valore & iterazioni \\
+        & Bisezione & 0.7390851341187954 & 28\\ \cline{2-4}
+        $10^{-9}$ & Newton & 0.7390851332151607 &  5\\ \cline{2-4}
+        & Secanti & 0.7390851332151607 & 7\\ \cline{2-4}
+        & Corde &  0.7390851327392538 &  52 \\ \cline{2-4}
         \hline
-        Bisezione &  0.7390842437744141 & 19\\
-        Newton & 0.7390851332151607 &  5\\
-        Secanti &  0.7390851332151607 & 6\\
-        Corde &  0.7390845495752126 &  34 \\
+        & Bisezione &  0.7390851332147577 & 39\\ \cline{2-4}
+        $10^{-12}$ & Newton &  0.7390851332151607 &  6\\ \cline{2-4}
+        & Secanti &   0.7390851332151607 & 7\\ \cline{2-4}
+        & Corde &   0.7390851332157368 &  69 \\ \cline{2-4}
         \hline
-    \end{tabular}
-    \item tolleranza = $10^{-9}$
-    \begin{tabular}{|l|l|l|}
-        \hline
-        Metodo & Valore & iterazioni \\
-        \hline
-        Bisezione & 0.7390851341187954 & 28\\
-        Newton & 0.7390851332151607 &  5\\
-        Secanti & 0.7390851332151607 & 7\\
-        Corde &  0.7390851327392538 &  52 \\
-        \hline
-    \end{tabular}
-    \item tolleranza = $10^{-12}$
-    \begin{tabular}{|l|l|l|}
-        \hline
-        Metodo & Valore & iterazioni \\
-        \hline
-        Bisezione &  0.7390851332147577 & 39\\
-        Newton &  0.7390851332151607 &  6\\
-        Secanti &   0.7390851332151607 & 7\\
-        Corde &   0.7390851332157368 &  69 \\
-        \hline
-    \end{tabular}
-\end{itemize}
+\end{tabular}
