@@ -1,4 +1,4 @@
-function [x,flag] = aitken( f, f1, x0, tolx, maxit )
+function [x, i] = aitken( f, f1, x0, tolx, maxit )
        %
        % [x,flag] = aitken( f, f1, x0, tolx [, maxit] )
        %
@@ -21,19 +21,12 @@ function [x,flag] = aitken( f, f1, x0, tolx, maxit )
               error('tolleranza non idonea');
        end
        x = x0;
-       flag = -1;
        for i = 1:maxit
               fx = feval( f, x0 );
               f1x = feval( f1, x0 );
-              if fx==0 
-                     break; 
-              end
               x1 = x0 - fx/f1x;
               fx = feval( f, x1 );
               f1x = feval( f1, x1 );
-              if f1x==0 
-                     break; 
-              end
               x = x1 -fx/f1x;
               x = (x*x0-x1^2)/(x-2*x1+x0);
               if abs(x-x0)<=tolx*(1+abs(x0))

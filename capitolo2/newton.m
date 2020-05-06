@@ -26,5 +26,7 @@ function [x,i] = newton( f, f1, x0, tolx, maxit )
                      x0 = x;
               end
        end
-
+       if abs(x-x0) > tolx*(1+abs(x0))
+              error('metodo non converge'); 
+       end
 end

@@ -23,4 +23,5 @@ function [x,i] = bisez(f,a,b,tolx)
             fa = fx;
         end
     end
+    
 end

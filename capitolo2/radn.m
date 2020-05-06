@@ -1,9 +1,10 @@
-function x1=radn(n,x)
+function x1=radn(x, n)
 %
 % x1=radn(n.x)
-% funzione Matlab che implementa il metodo di newtown per il calcolo della 
+% funzione Matlab che implementa il metodo di newton per il calcolo della 
 % radice n-esima di un numero positivo x  
 %
+format long e
 imax=1000;
 tolx=eps;   
 if x<=0
