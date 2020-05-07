@@ -13,6 +13,6 @@ for i=3:3:12
 end
 row_names = {'bisezione', 'newton', 'corde', 'secanti'}
 colnames = {'10^-3','10^-6','10^-9','10^-12'}
-sTable = array2table(y,'RowNames',row_names,'VariableNames',colnames)
+sTable = array2table(x,'RowNames',row_names,'VariableNames',colnames)
 l = linspace(1, 4, 4)    
 plot(l, y')
