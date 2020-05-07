@@ -22,7 +22,7 @@ function [x,i] = newtonmod( f, f1,  x0, m, tolx, maxit )
            if fx==0 
                   break; 
            end
-           x = x - m*fx/f1x;
+           x = x - m*(fx/f1x);
            if abs(x-x0)<=tolx*(1+abs(x0))
                   break;
            else 
