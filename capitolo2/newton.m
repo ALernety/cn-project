@@ -1,10 +1,16 @@
 function [x,i] = newton( f, f1, x0, tolx, maxit )
-       %
-       % [x,i] = newton( f, f1, x0, tolx [, maxit] )
-       %
-       % Metodo di Newton per determinare una approssimazione
-       % della radice di f(x)=0 con tolleranza  tolx, a
-       % partire da x0, entro maxit iterationi (default = 100).
+%newton
+%[x,i]=newton(f,f1, x0, tolx, maxit)
+%Pre: f derivabile
+%  Applica il metodo di newton per il calcolo della
+%  radice dell'equazione f(x)=0 
+%  f          -funzione
+%  f1         -derivata di f
+%  x0         -approssimazione iniziale
+% tolx        -tolleranza 
+% maxit       -numero massimo di iterazioni(default=100)
+% restituisce in x l'approssimazione della radice e in i il numero di iterazioni
+% VEDI ANCHE: bisezione, corde, secanti, aitken, newtonmod
       
        format long e
        if nargin<4 

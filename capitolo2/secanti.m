@@ -1,10 +1,17 @@
 function [x, i]=secanti(f,x0,x1,tolx,maxit)
-   %
-       % [x,i] = secanti( f,  x0, x1, tolx [, maxit] )
-       %
-       % Metodo delle secanti per determinare una approssimazione
-       % della radice di f(x)=0 con tolleranza  tolx, a
-       % partire da x0, entro maxit iterationi (default = 100).
+%secanti
+%[x,i]=secanti(f, x0, x1, tolx, maxit)
+%
+%  Applica il metodo delle secanti per il calcolo della
+%  radice dell'equazione f(x)=0 
+%  f          -funzione
+%  x0         -approssimazione iniziale
+%  x1         -seconda approssimazione iniziale
+% tolx        -tolleranza 
+% maxit       -numero massimo di iterazioni(default=100)
+% restituisce in x l'approssimazione della radice e in i il numero di iterazioni
+% VEDI ANCHE: bisezione, newton, corde, aitken, newtonmod
+      
   format long e
   if nargin<4 
     error('numero argomenti insufficienti');

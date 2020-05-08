@@ -1,9 +1,17 @@
 function [x, i] = newtonmod( f, f1,  x0, m, tolx, maxit )
-    %
-    % [x,i] = newton( f, f1, x0, m, tolx [, maxit] )
-    %Metodo di Newton modificato per determinare una approssimazione 
-    %di una radice di f(x) con molteciplita m,
-    % a partire da x0, entro maxit iterationi (default = 100).
+%NEWTONMOLT
+%[x,i]=Newtonmolt(f,f1,x0,m,tolx,maxit)
+%  Pre: f derivabile
+%  Applica il metodo di Newton per il calcolo della
+%  radice (di molteplicita' nota r) dell'equazione f(x)=0 
+%  f          -funzione
+%  f1         -derivata di f
+%  x0         -approssimazione iniziale
+%  m          -molteplicita' della radice
+% tolx        -tolleranza 
+% maxit       -numero massimo di iterazioni(default=100)
+% restituisce in x l'approssimazione della radice e in i il numero di iterazioni
+% VEDI ANCHE: bisezione, newton, secanti, corde, aitken
    
     format long e
     if nargin<5 

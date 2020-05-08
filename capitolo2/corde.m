@@ -1,10 +1,16 @@
 function [x,i] = corde( f, f1, x0, tolx, maxit )
-    %
-    % [x,i] = corde( f, f1, x0, tolx [, maxit] )
-    %
-    % Metodo delle corde per determinare una approssimazione
-    % della radice di f(x) con tolleranza tolx, a
-    % partire da x0, entro maxit iterationi (default = 100).
+%corde
+%[x,i]=corde(f,f1, x0, tolx, maxit)
+%Pre: f derivabile
+%  Applica il metodo delle corde per il calcolo della
+%  radice dell'equazione f(x)=0 
+%  f          -funzione
+%  f1         -derivata di f
+%  x0         -approssimazione iniziale
+% tolx        -tolleranza 
+% maxit       -numero massimo di iterazioni(default=100)
+% restituisce in x l'approssimazione della radice e in i il numero di iterazioni
+% VEDI ANCHE: bisezione, newton, secanti, aitken, newtonmod
    
     format long e
     if nargin<4 
