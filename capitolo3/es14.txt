@@ -1,0 +1,3 @@
+l'espressione A\b risolve in matlab,  il sistema di equazioni lineari nella forma matriciale A*x=b per X
+l'espressione (A'*A)\(A'*b) impiega lo stesso operatore \, quindi risolve il sistema delle equazioni lineare delle due parentesi.
+Le due espressioni sono equivalenti dal punto di vista matematico, ma in Matlab non danno lo stesso risultato, siccome nella seconda espressioni un overflow nel calcolo della moltiplicazione all'interno delle due parentesi che porta a porre una serie di valori a 0, questo fa si che non si ottiene lo stesso risultato

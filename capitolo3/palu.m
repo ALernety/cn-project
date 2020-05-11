@@ -16,11 +16,13 @@ for i=1:n-1
     end
     ki=ki+i-1;
     if ki>i
-        LU([i ki],:);
         p([i ki])=p([ki i]);
+       LU([i ki],:)= LU([ki i],:);
     end
-    LU(i+1:n,1)=LU(i+1:n,i)/LU(i,i);
+    LU(i+1:n,i)=LU(i+1:n,i)/LU(i,i);
     LU(i+1:n,i+1:n)=LU(i+1:n,i+1:n)-LU(i+1:n,i)*LU(i,i+1:n);
+end
+return 
 end
 
     
