@@ -43,7 +43,7 @@ esercizi per elaborato calcolo numerico
 
 5. **Chapter 5**
      
-     1. Exercise 21 - :x:
+     1. Exercise 21 - :heavy_exclamation_mark:
      2. Exercise 22 - :x:
      3. Exercise 23 - :x:
      4. Exercise 24 - :x:

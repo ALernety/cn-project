@@ -13,11 +13,10 @@ for i=3:3:12
 end
 row_names = {'bisezione', 'newton', 'corde', 'secanti'};
 colnames = {'10^-3','10^-6','10^-9','10^-12'};
-sTable = array2table(x,'RowNames',row_names,'VariableNames',colnames)
-format
-fTable = array2table(y,'RowNames',row_names,'VariableNames',colnames)
+values = array2table(x,'RowNames',row_names,'VariableNames',colnames);
+disp(values)
 figure
-plot([3, 6, 9, 12], y','-')
+plot([3, 6, 9, 12], y','o-')
 title('iterazioni richieste per la convergenza al diminuire di tolx')
 xlabel('tolleranza = 10^{-x}')
 ylabel('iterazioni')
