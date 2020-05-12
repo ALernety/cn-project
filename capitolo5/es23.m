@@ -1,9 +1,8 @@
 
+x = zeros(1,9);
+value = log(cos(1.1)/cos(1));
+errors=zeros(1, 9);
 for i = 1:9
-    c = ncweights(i);
-    x = linspace(-1, 1.1, i+1)
-    y = tan(x);
-    in = sum(y.*c);
-    h = 2.1/i;
-    val = h*in
+    x(i) = newtoncotes(@tan, -1,1.1, i);
+    errors(i) = abs(value-x(i));
 end

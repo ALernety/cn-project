@@ -1,9 +1,9 @@
 function c = ncweights(n)
-%myFun - Description
 %
-% Syntax: c = nc-weights(n)
 %
-% Long description
+%  c = nc-weights(n)
+%  calcola i pesi della formula di newton cotes di grado n;
+% 
 if n<=0
     error('grado della formula non positivo');
 end
