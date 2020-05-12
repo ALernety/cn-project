@@ -6,6 +6,7 @@ x1 = 1;
 x=zeros(4,4);
 y= zeros(4, 4);
 for i=3:3:12
+   
    [x(1, i/3), y(1, i/3)] = bisezione(f, x0, x1, 10^(-i));
    [x(2, i/3), y(2, i/3)] = newton(f, f1, x0, 10^(-i));
    [x(3, i/3), y(3, i/3)] = corde(f, f1, x0, 10^(-i));
