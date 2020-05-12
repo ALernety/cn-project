@@ -1,7 +1,17 @@
 function [LU,p]=palu(A)
 % [LU,p]=palu(A)
-% funzione Matlab che dato in input matrice A restituisce matrice fattorizzata LU
+% funzione che dato in input matrice A restituisce matrice fattorizzata LU
 % e il relativo vettore p di permutazione di LU con pivoting parziale di A
+% input:
+%   A= matrice di cui si vuole calcolare la fattorizzazione lu con pivoting
+%   parziale
+% output:
+%   LU=matrice quadrata di dimensioni n*n, composta dalla matrice 
+%   triangolare superiore U e la matrice triangolare inferiore a diagonale
+%   unitaria L
+%   p= vettore di permutazione di dimensione n, generato dalla 
+%   fattorizzazione di A con pivoting parziale
+%
 
 [n,m]=size(A);
 if(n~=m)

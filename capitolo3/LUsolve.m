@@ -1,6 +1,15 @@
 function x=LUsolve(LU,p,b)
 %
-% con pivoting
+% funzione che risolve il sistema lineare LUx=b(p):
+%input:
+%   LU=matrice quadrata (n*n) fattorizzata LU, ottenuta attrarso la
+%   fattorizzazione con pivoting parziale
+%   p= vettore di permutazione per b, di dimensione n, con valori da (1 a
+%   n)
+%   b=vettore dei termini noti
+%output:
+%   x=vettore delle incognite calcolate
+%
 %
    [m,n]=size(LU);
    if(m~=n || n~=length(b)) error('dati incosistenti')
