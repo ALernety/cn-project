@@ -1,7 +1,7 @@
 function y = newtoncotes(f,a, b, n)
 %
 % y= newtoncotes(f,a,b, n)
-% calcola l'approssimazione dell'integrale definito per la funzione f sull'intervallo [a, b]
+% calcola l'approssimazione dell'integrale definito per la funzione f sull'intervallo [a, b],
 % utilizzando la formula di newton cotes di grado n.
 %
     
