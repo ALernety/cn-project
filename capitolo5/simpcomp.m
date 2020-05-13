@@ -1,7 +1,7 @@
-function I = trapecomp(f, a, b, n)
+function I = simpcomp(f, a, b, n)
     %myFun - Description
     %
-    % I = trapecomp(f, a, b)
+    % I = simpcomp(f, a, b)
     %
     % Approssimazione dell'integrale definito di f(x) con estremi a e b, 
     % mediante la formula composita di Simpson su n+1 ascisse equidistanti(n pari)
