@@ -33,8 +33,8 @@ esercizi per elaborato calcolo numerico
 
 4. **Chapter 4**
     
-    1. Exercise 15 - :x:
-    2. Exercise 16 - :x:
+    1. Exercise 15 - :heavy_exclamation_mark:
+    2. Exercise 16 - :heavy_exclamation_mark:
     3. Exercise 17 - :x:
     4. Exercise 18 - :x:
     5. Exercise 19 - :x:
