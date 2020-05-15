@@ -14,7 +14,7 @@ function [y,df] = hermite( xi, fi, f1i, xx )
     end
     for i = 1:m-1
         if any( find(xi(i+1:m)==xi(i)) )
-            error('ascisse non distinte')
+            error('ascisse non distinte');
         end
     end
     n = 2*m-1; % grado del polinomio interpolante

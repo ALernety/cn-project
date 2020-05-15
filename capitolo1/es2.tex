@@ -1,3 +1,5 @@
 \subsection{Esercizio 2}
-Eseguendo lo script si ottiene $u = 1.1102e-16 = \dfrac{\epsilon}{2}$, dove $\epsilon$ è la precisione di macchina.
-$\epsilon$ è il più piccolo valore di macchina per il quale $a + \epsilon \neq a$ per un qualsiasi numero $a$. Quando $u$ assume valore $\frac{\epsilon}{2}$ il controllo interno $1+u==1$, che corrisponde alla condizione di uscita, risulta vero, perchè $u$ è minore di $\epsilon$.
+Eseguendo lo script si ottiene $u = 1.1102 \cdot 10^{-16} = \dfrac{\epsilon}{2}$, dove $\epsilon$ è la precisione di macchina.
+Il controllo interno ci dice che si esce dal ciclo solamente quando u diventa talmente piccolo che la somma $1+u$ viene percepita dal calcolatore come uguale a $1$.
+Questo avviene se $ \displaystyle  u < \epsilon$, e la prima iterazione in cui il controllo risulta vero è proprio quando $ u == \dfrac{\epsilon}{2}$ . Il codice può quindi essere
+utilizzato per calcolare la precisione di macchina di un calcolatore, moltiplicando per 2 il valore di u restituito. 

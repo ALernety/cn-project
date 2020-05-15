@@ -12,7 +12,7 @@ esercizi per elaborato calcolo numerico
 1. **Chapter 1**
     1. Exercise 1 - :heavy_check_mark:
     1. Exercise 2 - :heavy_check_mark:
-    1. Exercise 3 - :heavy_exclamation_mark:
+    1. Exercise 3 - :heavy_check_mark:
 
 2. **Chapter 2**
     

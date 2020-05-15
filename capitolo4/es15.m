@@ -7,11 +7,12 @@ for n = 1:40
     xcheby = chebyshev(-1,1,n);
     ylin = lagrange(xlin,f(xlin),x);
     ycheby = lagrange(xcheby,f(xcheby),x);
-    errlin = abs(f(x) - ylin);
-    errcheby = abs(f(x) - ycheby);
-    linerrors(n) = max(errlin);
-    chebyerrors(n) = max(errcheby);
+    linerrors(n) = norm(abs(f(x) - ylin), inf);
+    chebyerrors(n) = norm( abs(f(x) - ycheby), inf);
 end
 semilogy(linerrors);
 hold on;
 semilogy(chebyerrors);
+xlabel('numero di ascisse di interpolazione');
+ylabel('massimo errore di interpolazione');
+legend({'ascisse  equidistanti', 'ascisse di chebyshev'},'Location','northeast');   
