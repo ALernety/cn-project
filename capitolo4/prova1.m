@@ -3,7 +3,7 @@ b=1;
 ntot=100;
 erreq=zeros(ntot-3,1);
 errch=zeros(ntot-3,1);
-for n=4:ntot
+n=ntot;
 xeq=linspace(a,b,n+1);
 xch=chebyshev(a,b,n+1);
 xch(1)=a;
@@ -12,10 +12,11 @@ xq=linspace(a,b,100);
 yeq=cos((pi*(xeq(:).^2))/2);
 ych=cos((pi*(xch(:).^2))/2);
 yq=cos((pi*(xq(:).^2))/2);
-riseq=splinenat(xeq,yeq,xq);
-risch=splinenat(xch,ych,xq);
-erreq((n-3),1)=norm(yq-riseq,Inf);
-errch((n-3),1)=norm(yq-risch,Inf);
-end
-x=(4:1:n);
-semilogy(x,erreq,x,errch);
+riseq=spline(xeq,yeq,xq);
+risch=spline(xch,ych,xq);
+riseqnat=splinenat(xeq,yeq,xq);
+rischnat=splinenat(xch,ych,xq);
+x=(1:1:n);
+
+semilogy(x,riseq,x,risch);
+%semilogy(x,riseqnat,x,rischnat);
