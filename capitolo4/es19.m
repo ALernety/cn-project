@@ -1,21 +1,18 @@
-a=-1;
-b=1;
-ntot=100;
-erreq=zeros(ntot-3,1);
-errch=zeros(ntot-3,1);
-for n=4:ntot
-xeq=linspace(a,b,n+1);
-xch=chebyshev(a,b,n+1);
-xch(1)=a;
-xch(n+1)=b;
-xq=linspace(a,b,100);
-yeq=cos((pi*(xeq(:).^2))/2);
-ych=cos((pi*(xch(:).^2))/2);
-yq=cos((pi*(xq(:).^2))/2);
-riseq=spline(xeq,yeq,xq);
-risch=spline(xch,ych,xq);
-erreq((n-3),1)=norm(yq-riseq,Inf);
-errch((n-3),1)=norm(yq-risch,Inf);
+f = @(x)(cos((pi*(x.^2))/2));
+x = linspace(-1, 1, 100001);
+linerrors = zeros(1, 40);
+chebyerrors = zeros(1, 40);
+for n = 4:100
+    xlin = linspace(-1, 1, n+1);
+    xcheby = chebyshev(-1,1,n+1);
+    ylin = spline(xlin,f(xlin),x);
+    ycheby = spline(xcheby,f(xcheby),x);
+    linerrors(n) = norm(abs(f(x) - ylin), inf);
+    chebyerrors(n) = norm( abs(f(x) - ycheby), inf);
 end
-x=(4:1:n);
-semilogy(x,erreq,x,errch);
+semilogy(linerrors);
+hold on;
+semilogy(chebyerrors);
+xlabel('numero di ascisse di interpolazione');
+ylabel('massimo errore di interpolazione');
+legend({'ascisse  equidistanti', 'ascisse di chebyshev'},'Location','northeast');   
