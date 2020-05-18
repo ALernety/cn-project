@@ -5,8 +5,9 @@ fi = f(xi);
 fpi = fp(xi);
 errors=zeros(1, 20);
 for m = 1:20
-    p = polyfit(xi,fpi, m);
-    y = polyval(p, xi);
+    y = minimiquadrati(xi, fpi, m);
     errors(m) = norm(abs(y-fi), inf);
 end
 semilogy(errors);
+xlabel('grado del polinomio');
+ylabel('errore di interpolazione massimo');

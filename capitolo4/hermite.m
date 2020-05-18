@@ -32,9 +32,6 @@ function [y,df] = hermite( xi, fi, f1i, xx )
             df(j) = ( df(j)-df(j-1) )/( x(j)-x(j-i) );
         end
     end
-    
-    1
-    
     % calcolo il polinomio interpolante nelle ascisse prescritte
     %
     y = df(n+1)*ones(size(xx));

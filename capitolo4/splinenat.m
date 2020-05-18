@@ -23,7 +23,7 @@ output=zeros(l,1);
 for i=1:l
   indg=find(xq(i)<=x1(2:n),1)+1;
   indp=find(xq(i)>=x1(1:n-1),1,'last');
-  output(i)=(((xq(i)-x1(indp))^3)*m(indg)+((x1(indg)-xq(i))^3)*m(indp))/(6*h(indp))+q(indp)*(xq(i)-x1(indp))+r(indp);
+  output(i)=(((xq(i)-x1(indp)).^3).*m(indg)+((x1(indg)-xq(i))^3).*m(indp))/(6*h(indp))+q(indp).*(xq(i)-x1(indp))+r(indp);
 end
 return
 end
