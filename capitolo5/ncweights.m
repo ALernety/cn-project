@@ -15,9 +15,9 @@ for j = 1:(ceil((n+1)/2))
     f = @(x)(prod(x-temp) /prod(vj-temp));
     c(j) = integral(f, 0, n, 'ArrayValued', true);
 end
-
-c = [c flip(c)];
+c = [c flip(c)]; %sfrutto la simmetria dei pesi
 if mod(n,2)==0
+    %elimino la copia del valore centrale prodotta da flip(c) e che risulta di troppo per n pari
     c(n/2+1) = [];
 end
 return
