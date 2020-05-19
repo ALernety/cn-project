@@ -1,14 +1,13 @@
 function y = minimiquadrati(xi, fi, m)
-%myFun - Description
 %
-% Syntax: y = mini(input)
 %
-% Long description
+%  y = minimiquadrati(xi, fi, m)
+%  calcola il valore del polinomio di approssimazione ai minimi quadrati di grado m
+% sulle ascisse xi. fi contiene i valori approssimati di una funzione f valutata su xi
 if length(unique(xi)) < m+1
     error('ascisse distinte non sufficienti');
 end
 fi = fi(:);
-
 V = fliplr(vander(xi));
 V = V(1:end, 1:m+1);
 QR = myqr(V);
