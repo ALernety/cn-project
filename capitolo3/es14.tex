@@ -3,7 +3,7 @@
 \begin{table}[h]
 \begin{tabular}{|l l|}
         \hline
-        A${\}$b & (A’*A)${\}$(A’*b)\\
+        A$\backslash$b & (A’*A)$\backslash$(A’*b)\\
         \hline
         1.0000& 3.5759 \\
     	2.0000&-3.4624   \\
@@ -16,9 +16,10 @@
         \hline
 \end{tabular}
 \caption{valori approssimati}
-\label{tab::1}     
+\label{tab:14}     
 \end{table}
 
-L'espressione A\b risolve in matlab,  il sistema di equazioni lineari nella forma matriciale A*x=b per X. \\\
-L'espressione (A'*A) \ (A'*b) impiega lo stesso operatore \, quindi risolve il sistema delle equazioni lineare delle due parentesi.
-La Matrice A viene calcolata usando la funzione vander() che genera una matrice di tipo Vandermond, la quale è molto mal condizionata. Usando la funzione cond() sulla matrice A si ottiene una condizionamento pari a: 1.5428e+09. Eseguendo poi la moltiplicazione della prima parentesi tonda, il condizionamento è pari a: 4.4897e+18. Andando cosi ad eseguire una divisione tra una matrice mal condizionata e un vettore, il risultato presenta degli errori.
+L'espressione $A \backslash b$ risolve in matlab,  il sistema di equazioni lineari nella forma matriciale A*x=b per X. \\\
+L'espressione (A'*A) $\backslash$ (A'*b) impiega lo stesso operatore $\backslash$, quindi risolve il sistema delle equazioni lineare delle due parentesi.
+La Matrice A viene calcolata usando la funzione vander() che genera una matrice di tipo Vandermonde, la quale è  mal condizionata. Usando la funzione cond() sulla matrice A si ottiene una condizionamento pari a: 1.5428e+09. Eseguendo poi la moltiplicazione della prima 
+parentesi tonda, il condizionamento è pari a: 4.4897e+18. Andando cosi ad eseguire una divisione tra una matrice mal condizionata e un vettore, il risultato presenta degli errori.
