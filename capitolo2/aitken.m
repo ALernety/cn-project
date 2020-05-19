@@ -54,7 +54,7 @@ function [x,i]=aitken(f,f1,x0,tolx, itmax)
                end
                x = x1 - fx/f1x;
                t = ((x-2*x1)+x0);
-               .
+               
                if t == 0
                    if feval(f,x) == 0 
                        return

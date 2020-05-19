@@ -1,7 +1,13 @@
 function QR = myqr(A)
-%QR = myqr(A)
-% calcola la fattorizzazione QR di Householder della matrice A
-
+%   QR = myqr(A)
+%   calcola la fattorizzazione QR di Householder della matrice A
+%   Input:
+%           A= matrice quadrata da fattorizzare 
+%
+%   Output:
+%           QR=matrice contenente le informazioni sui fattori Q e R della
+%           fattorizzazione QR di A
+%
     [m,n] = size(A);
     if  n > m
         error('Dimensioni errate');

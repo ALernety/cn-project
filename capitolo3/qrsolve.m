@@ -1,8 +1,14 @@
 function x = qrsolve(QR, b)
 %
 %
-% x = qrSolve(QR, b)
-% risolve il sistema QR*x=b nel senso dei minimi quadrati
+%   x = qrSolve(QR, b)
+%   risolve il sistema QR*x=b nel senso dei minimi quadrati.
+%   Input:
+%           QR=matrice contenente le informazioni Q e R della
+%           fattorizzazione di una matrice quadrata A
+%           b=termine noto del sistema lineare 
+%   Output:
+%           x=vettore delle soluzioni del sistema lineare
 %
 [m,n] = size(QR);
 k = length(b);

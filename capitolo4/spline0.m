@@ -1,9 +1,15 @@
 function mi = spline0( xi, fi )
 %
-% mi = spline0( xi, fi ) Calcola il vettore degli mi per il calcolo di una
-%
-%spline cubica naturale interpolante i punti (xi,fi).
-%
+% mi = spline0( xi, fi ) Calcola il vettore delle mi per il 
+% calcolo di una spline cubica naturale interpolante i punti (xi,fi).
+% con mi(1)=mi(m+1)=0
+% Input:
+%       xi=vettore delle ascisse
+%       fi=vettore dei valori della funzsione f(x) calcolata sulle ascisse
+%       xi
+% Output:
+%        mi=vettore delle S"(xi), con S"(1)=S"(m+1)=0
+
 m = length(xi);
 if m~=length(fi), 
     error("dati errati"); 
