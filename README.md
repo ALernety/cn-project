@@ -28,7 +28,7 @@ esercizi per elaborato calcolo numerico
     3. Exercise 10 - :heavy_exclamation_mark:
     4. Exercise 11 - :heavy_check_mark:
     5. Exercise 12 - :heavy_check_mark:
-    6. Exercise 13 - :heavy_exclamation_mark:
+    6. Exercise 13 - :heavy_check_mark:
     7. Exercise 14 - :heavy_exclamation_mark:
 
 4. **Chapter 4**
@@ -47,5 +47,5 @@ esercizi per elaborato calcolo numerico
      2. Exercise 22 - :heavy_check_mark:
      3. Exercise 23 - :heavy_check_mark:
      4. Exercise 24 - :heavy_exclamation_mark:
-     5. Exercise 25 - :heavy_exclamation_mark:
+     5. Exercise 25 - :heavy_check_mark:
    

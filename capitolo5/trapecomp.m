@@ -7,7 +7,7 @@ function I = trapecomp(f, a, b, n)
 % mediante la formula composita dei trapezi su n+1 ascisse equidistanti
 if a==b
     I=0;
-else if n < 1 || n~=fix(n)
+elseif n < 1 || n~=fix(n)
     error('numero di ascisse non valido');
 else
     h=(b-a)/n;

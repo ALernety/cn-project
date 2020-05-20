@@ -1,16 +1,25 @@
 \subsection{Esercizio 25}
-\begin{tabular}{|c c c |}
+\lstinputlisting[language=Matlab]{capitolo5/adaptrap.m}
+\lstinputlisting[language=Matlab]{capitolo5/adapsim.m}
+\begin{table}[h]
+\begin{tabular}{|c |c |c|}
         \hline
         tolleranza$\backslash$formula & trapezi adattiva          &simpson adattiva\\
         \hline
-        $10^{-2}$                     &$0.295559711784128$        &$0.281297643062670$ \\
+        $10^{-2}$                     &$0.295559711784128$,  punti $= 21$      &$0.281297643062670$,  punti $= 17$  \\
         \hline
-        $10^{-3}$                     &$0.294585368185034$        &$0.281297643062670$ \\
+        $10^{-3}$                     &$0.294585368185034$ , punti $= 93$     &$0.281297643062670$,  punti $= 17$  \\
         \hline
-        $10^{-4}$                     &$0.294274200873635$        &$0.294259338419631$ \\
+        $10^{-4}$                     &$0.294274200873635$,  punti $= 277$      &$0.294259338419631$, punti $= 41$  \\
         \hline
-        $10^{-5}$                     &$0.294230142164878$        &$0.294227809768005$ \\
+        $10^{-5}$                     &$0.294230142164878$, punti $= 793$      &$0.294227809768005$,  punti $= 81$  \\
         \hline
-        $10^{-6}$                     &$0.294226019603178$        &$0.294225764620384$ \\
+        $10^{-6}$                     &$0.294226019603178$,  punti $= 2692$      &$0.294225764620384$ ,  punti $= 145$ \\
         \hline
     \end{tabular}
+    \caption{risultati}
+    \label{tab:25}
+\end{table}
+Per ciascuna formula, l'operazione che comporta maggior costo computazionale ad ogni chiamata è la valutazione funzionale dei punti di un sottointervallo.
+Poichè ogni punto viene valutato una sola volta, possiamo confrontare il costo delle due formule andando a vedere quanti punti aggiuntivi sono stati utilizzati.
+Osservando i dati riportati nella tabella \ref{tab:25}(raccolti in \nameref{cod:25}), è palese come la formula di simpson adattiva convergà più rapidamente rispetto alla formula dei trapezi adattiva.
