@@ -1,5 +1,9 @@
 \subsection{Esercizio 24}
-\begin{tabular}{|c|c|c |}
+\lstinputlisting[language=Matlab]{capitolo5/trapecomp.m}
+\lstinputlisting[language=Matlab]{capitolo5/simpcomp.m}
+Approssimando $\displaystyle \int_{-1}^{1.1}tan(x)dx$ con le due formule si ottiene:
+\begin{table}[h]
+    \begin{tabular}{|c|c|c |}
     \hline
     intervalli$\backslash$formula & trapezi composita         &simpson composita\\
     \hline
@@ -15,4 +19,9 @@
     $20$                          &$0.176229037552030$        &$0.174960448895386$ \\
     \hline
 \end{tabular}
-la formula composita di simpson converge più rapidamente ed è più accurata rispetto alla formula dei trapezi
+\caption{risultati di \nameref{cod:24}}
+\label{tab:24}
+\end{table}
+
+
+La formula composita di simpson converge più rapidamente ed è più precisa rispetto alla formula dei trapezi

@@ -1,6 +1,8 @@
 \subsection{Esercizio 25}
 \lstinputlisting[language=Matlab]{capitolo5/adaptrap.m}
 \lstinputlisting[language=Matlab]{capitolo5/adapsim.m}
+\newpage
+Approssimando $\displaystyle \int_{-1}^{1}\frac{1}{1+10^2x^2}dx$ con le due formule si ottiene:
 \begin{table}[h]
 \begin{tabular}{|c |c |c|}
         \hline
@@ -13,9 +15,11 @@
         $10^{-6}$                     &$0.294226019603178$,  punti $= 2692$      &$0.294225764620384$ ,  punti $= 145$ \\
         \hline
     \end{tabular}
-    \caption{risultati}
+    \caption{risultati di \nameref{cod:25}}
     \label{tab:25}
 \end{table}
+
+
 Per ciascuna formula, l'operazione che comporta maggior costo computazionale ad ogni chiamata è la valutazione funzionale dei punti di un sottointervallo.
 Poichè ogni punto viene valutato una sola volta, possiamo confrontare il costo delle due formule andando a vedere quanti punti aggiuntivi sono stati utilizzati.
-Osservando i dati riportati nella tabella \ref{tab:25}(raccolti in \nameref{cod:25}), è palese come la formula di simpson adattiva convergà più rapidamente rispetto alla formula dei trapezi adattiva.
+Osservando i dati riportati nella tabella \ref{tab:25}, è palese come la formula di simpson adattiva convergà più rapidamente rispetto alla formula dei trapezi adattiva.
