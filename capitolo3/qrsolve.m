@@ -10,6 +10,7 @@ function x = qrsolve(QR, b)
 %   Output:
 %           x=vettore delle soluzioni del sistema lineare
 %
+
 [m,n] = size(QR);
 k = length(b);
 if k ~= m

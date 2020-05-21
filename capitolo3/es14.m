@@ -7,9 +7,7 @@ cond(A)
 A\b;
 a=(A'*A);
 cond(a)
-rcond(a)
-b=(A'*b);
-cond(b)
-rcond(b)
-c=a\b;
+b1=(A'*b);
+cond(b1)
+c=a\b1;
 cond(c)
