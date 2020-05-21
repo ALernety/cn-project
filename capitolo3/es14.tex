@@ -20,6 +20,5 @@
 \end{table}
 
 L'espressione $A \backslash b$ risolve in matlab,  il sistema di equazioni lineari nella forma matriciale A*x=b per x.
-L'espressione (A'*A) $\backslash$ (A'*b) impiega lo stesso operatore $\backslash$, quindi risolve il sistema delle equazioni lineare delle due parentesi.
-La Matrice A viene calcolata usando la funzione vander() che genera una matrice di tipo Vandermonde, la quale è  mal condizionata. Usando la funzione cond() sulla matrice A si ottiene una condizionamento pari a: 1.5428e+09. Eseguendo poi la moltiplicazione della prima 
-parentesi tonda, il condizionamento è pari a: 4.4897e+18. Andando cosi ad eseguire una divisione tra una matrice mal condizionata e un vettore, il risultato presenta degli errori.
+L'espressione (A'*A) $\backslash$ (A'*b), è matematicamente la stessa operazione dell'espressione precedente, solamente che si moltiplica le due componenti per la trasposta di A. 
+La matrice A viene calcolata usando la funzione vander() che genera una matrice di tipo Vandermonde, la quale è  mal condizionata. Usando la funzione cond() sulla matrice A si ottiene una condizionamento pari a: 1.5428e+09.Nella prima espressione, questo malcondizionamento non influisce sul risultato.Invece nella seconda espressione eseguendo la prima parentesi tonda, il condizionamento è pari a: 4.4897e+18. Questo fa si che eseguendo la divisione tra una matrice mal condizionata e il vettore, il risultato presenta degli errori.
