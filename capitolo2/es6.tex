@@ -1,8 +1,9 @@
 \subsection{Esercizio 6}
-Eseguendo lo script \nameref{cod:6}si ottengono i risultati contenuti nella tabella \ref{tab::1}
-e nella figura \ref{fig::es6}. Come si può notare, il metodo di newton e il metodo delle secanti
+Eseguendo lo script \nameref{cod:6}si ottengono i risultati contenuti nella tabella \ref{tab:6}
+e nella figura \ref{fig:es6}. Come si può notare, il metodo di newton e il metodo delle secanti
 convergono molto più rapidamente del metodo di bisezione e del metodo delle corde. 
 \begin{table}[h]
+        \renewcommand\arraystretch{2}
 \begin{tabular}{|l l l l l|}
         \hline
         Metodo & tolleranza$=10^{-3}$  & tolleranza$=10^{-6}$ & tolleranza$=10^{-9}$ & tolleranza$=10^{-12}$ \\
@@ -13,14 +14,15 @@ convergono molto più rapidamente del metodo di bisezione e del metodo delle cor
         secanti  &  0.739085133215001  & 0.739085133215161  &  0.739085133215161  &  0.739085133215161 \\
         \hline
 \end{tabular}
-\caption{valori approssimati}
-\label{tab::2}     
+\caption{valori approssimati da bisezione, newton, secanti, corde}
+\label{tab:6}     
 \end{table}
+\newpage
 \begin{figure}[h!]
-\includegraphics[scale=0.65]{capitolo2/iter.png}
+\includegraphics[scale=0.7]{capitolo2/iter.png}
 \caption{iterazioni richieste}
-\label{fig::es6}
+\label{fig:es6}
 \end{figure}
-\
+
 
 

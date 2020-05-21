@@ -11,8 +11,6 @@ function [x,i] = newton( f, f1, x0, tolx, maxit )
 % maxit       -numero massimo di iterazioni(default=100)
 % restituisce in x l'approssimazione della radice e in i il numero di iterazioni
 % VEDI ANCHE: bisezione, corde, secanti, aitken, newtonmod
-      
-       format long e
        if nargin<4 
               error('numero argomenti insufficienti');
        elseif nargin==4
