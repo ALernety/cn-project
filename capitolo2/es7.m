@@ -17,7 +17,10 @@ values = array2table(x,'RowNames',row_names,'VariableNames',colnames)
 
 format
 iterations = array2table(y,'RowNames',row_names,'VariableNames',colnames)
-plot([3, 6, 9, 12], y','-')
+plot([3, 6, 9, 12], y(1,1:end)','-o');
+hold on;
+plot([3, 6, 9, 12], y(2,1:end)','-o');
+plot([3, 6, 9, 12], y(3,1:end)','--')
 title('iterazioni richieste per la convergenza al diminuire di tolx')
 xlabel('tolleranza = 10^{-x}')
 ylabel('iterazioni')

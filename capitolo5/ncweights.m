@@ -10,9 +10,8 @@ end
 c=zeros(1,floor(n / 2 + 1));
 for j = 1:(ceil((n+1)/2))
     temp = (0:n);
-    vj = temp(j);
     temp(j)=[];
-    f = @(x)(prod(x-temp) /prod(vj-temp));
+    f = @(x)(prod(x-temp) /prod(j-1-temp));
     c(j) = integral(f, 0, n, 'ArrayValued', true);
 end
 c = [c flip(c)]; %sfrutto la simmetria dei pesi
