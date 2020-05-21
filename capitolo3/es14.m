@@ -3,13 +3,5 @@ A = A(:,1:8);
 x = (1:8);
 x=x';
 b = A*x;
-cond(A)
 A\b;
-a=(A'*A);
-cond(a)
-rcond(a)
-b=(A'*b);
-cond(b)
-rcond(b)
-c=a\b;
-cond(c)
+(A'*A)\(A'*b);
