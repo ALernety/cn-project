@@ -1,3 +1,5 @@
+%Codice esercizio 15
+
 f = @(x)(cos((pi*x.^2)/2));
 x = linspace(-1, 1, 100001);
 linerrors = zeros(1, 40);

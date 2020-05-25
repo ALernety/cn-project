@@ -1,3 +1,5 @@
+%Codice esercizio 24
+
 a = -1;
 b = 1.1;
 n = 10;

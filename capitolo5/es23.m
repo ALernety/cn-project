@@ -1,3 +1,5 @@
+%Codice esercizio 23
+
 value = log(cos(1)/cos(1.1));
 x = zeros(1,9);
 errors=zeros(1, 9);

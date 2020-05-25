@@ -1,3 +1,5 @@
+%Codice esercizio 16
+
 f = @(x)(cos((pi*x.^2)/2));
 f1 = @(x)(-pi*x.*sin((pi*x.^2)/2));
 x = linspace(-1, 1, 100001);

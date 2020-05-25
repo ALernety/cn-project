@@ -3,7 +3,9 @@ function c = ncweights(n)
 %
 %  c = nc-weights(n)
 %  calcola i pesi della formula di newton cotes di grado n;
-% 
+% 	n-	grado
+%	c-	pesi calcolati
+%
 if n<=0
     error('grado della formula non positivo');
 end

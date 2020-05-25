@@ -1,3 +1,5 @@
+%Codice esercizio 20
+
 f = @(x)(cos((pi*x.^2)/2));
 fp = @(x)(f(x) + 10^(-3)*rand(size(x)));
 xi = -1 + 2*(0:10^4)/10^4;

@@ -3,6 +3,15 @@ function [I2, points] = adaptrap(f, a, b, tol, fa, fb)
 %
 % Syntax: [I2, points] = adaptrap(f, a, b, tol, fa, fb)
 %
+% Approssimazione dell'integrale definito di f(x) con estremi a e b, 
+% mediante la formula adattiva dei trapezi
+% 	f- 	funzione 
+%	a,b-	estremi intervallo
+%	tol-	tolleranza
+%	fa,fb-	valore della funzione valutata negli punti a,b
+%		
+%	points-	punti valutati
+%	I2-	valore dell'integrale di f(x)
 % 
 global points
 delta = 0.5;

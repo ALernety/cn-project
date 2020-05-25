@@ -1,3 +1,5 @@
+%Codice esercizio 25
+
 format long e
 f = @(x)(1/(1+100*x.^2));
 a = -1;

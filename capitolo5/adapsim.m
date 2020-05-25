@@ -2,6 +2,15 @@ function [I2, points] = adapsim(f, a, b, tol, fa, f1, fb)
 % [I2, points] = adapsim(f, a, b, tol, fa, f1, fb)
 % Approssimazione dell'integrale definito di f(x) con estremi a e b, 
 % mediante la formula adattiva di simpson 
+% 	f- 	funzione 
+%	a,b-	estremi intervallo
+%	tol-	tolleranza
+%	fa,fb-	valore della funzione valutata negli punti a,b
+%	f1- 	valore della funzione valutata nel punto x1, intermedio ad a,b
+%	
+%	points-	punti valutati
+%	I2-	valore dell'integrale di f(x)
+%
 global points
 delta = 0.5;
 x1 = (a+b)/2;

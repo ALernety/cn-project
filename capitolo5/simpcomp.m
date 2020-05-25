@@ -5,6 +5,12 @@ function I = simpcomp(f, a, b, n)
     %
     % Approssimazione dell'integrale definito di f(x) con estremi a e b, 
     % mediante la formula composita di Simpson su n+1 ascisse equidistanti(n pari)
+    % 	f-	funzione
+    %	a,b-	estremi dell'intervallo
+    %	I-	approssimazione integrale definito di f(x)
+    %
+    %
+
     if a==b
         I=0;
     elseif n < 2 || n/2 ~= fix(n/2)

@@ -1,3 +1,5 @@
+%Codice esercizio 10
+
 n = 10;
 xref = (1:10)';
 for i = 1:10

@@ -1,4 +1,8 @@
 function x = trisolve( phi, d, csi, b )
+%
+% x=trisolve(phi,d,csi,b)
+% 
+
 n = length(d);
 x = b;
 for i = 1:n-1

@@ -2,10 +2,10 @@ function [LU,p]=palu(A)
 % [LU,p]=palu(A)
 % funzione che dato in input matrice A restituisce matrice fattorizzata LU
 % e il relativo vettore p di permutazione di LU con pivoting parziale di A
-% input:
+% Input:
 %   A= matrice di cui si vuole calcolare la fattorizzazione lu con pivoting
 %   parziale
-% output:
+% Output:
 %   LU=matrice quadrata di dimensioni n*n, composta dalla matrice 
 %   triangolare superiore U e la matrice triangolare inferiore a diagonale
 %   unitaria L
