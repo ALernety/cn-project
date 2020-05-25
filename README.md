@@ -6,7 +6,7 @@ esercizi per elaborato calcolo numerico
 ### list of chapters and relative exercises ###
 
 :heavy_check_mark: Done.
-:heavy_check_mark: : To be revised.
+:heavy_exclamation_mark: : To be revised.
 :x: To do.
 
 1. **Chapter 1**

@@ -7,8 +7,9 @@ function c = ncweights(n)
 if n<=0
     error('grado della formula non positivo');
 end
-c=zeros(1,floor(n / 2 + 1));
-for j = 1:(ceil((n+1)/2))
+nvalues = floor(n/2 + 1);
+c=zeros(1,nvalues);
+for j = 1:nvalues
     temp = (0:n);
     temp(j)=[];
     f = @(x)(prod(x-temp) /prod(j-1-temp));

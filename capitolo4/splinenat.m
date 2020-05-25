@@ -13,7 +13,7 @@ function output=splinenat(xi,fi,xq)
 m = length(xi);
 l=length(xq);
 
-if m~=length(fi), 
+if m~=length(fi) 
     error("dati errati"); 
 end
 for i = 1:m-1
