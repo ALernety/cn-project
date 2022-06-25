@@ -9,10 +9,3 @@ Spiegare i risultati ottenuti.
 
 Quando si esegue $a-a+b$ il risultato è $100$ mentre quando si esegue $a+b-a$ si ottiene $0$. La differenza dei risultati è dovuta al fenomeno della cancellazione
 numerica:
-
-% \lstinputlisting[language=Matlab]{capitolo2/radn.m}
-% \begin{itemize}
-%     \item nel primo caso la sottrazione avviene sullo stesso numero $a=10^{20}$. Sottrare un numero da se stesso ha sempre risultato esatto $0$ e quindi il risultato finale è corretto
-%     \item nel secondo caso la sottrazione avviente tra i termini $a+b = 10^{20} + 100$ e $a = 10^{20}$. a+b ha le prime 18 cifre in comune con a e , a causa degli errori di approssimazione, le ultime tre cifre
-%     vengono cancellate dalla sottrazione, dando 0 come risultato finale.
-% \end{itemize}

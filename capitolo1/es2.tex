@@ -3,9 +3,3 @@ Calcolare, motivandone i passaggi, la precisione di macchina della doppia precis
 dello standard IEEE. Confrontare questa quantità con quanto ritornato dalla variabile eps di
 Matlab, commentando a riguardo.
 \newline \textbf{Soluzione:}
-
-
-% Eseguendo lo script si ottiene $u = 1.1102 \cdot 10^{-16} = \dfrac{\epsilon}{2}$, dove $\epsilon$ è la precisione di macchina.
-% Il controllo interno ci dice che si esce dal ciclo solamente quando u diventa talmente piccolo che la somma $1+u$ viene percepita dal calcolatore come uguale a $1$.
-% Questo avviene se $ \displaystyle  u < \epsilon$, e la prima iterazione in cui il controllo risulta vero è proprio quando $ u == \dfrac{\epsilon}{2}$ . Il codice può quindi essere
-% utilizzato per calcolare la precisione di macchina di un calcolatore, moltiplicando per 2 il valore di u restituito. 
