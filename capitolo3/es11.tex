@@ -1,12 +1,5 @@
 \subsection{Esercizio 11}
-Scrivere una function Matlab,
-\begin{lstlisting}[language=Matlab]
-    function [x,nr] = miaqr(A, b)
-\end{lstlisting}
-che, data in ingresso la matrice $A$ $m \times n$, con $m \geq n = rank(A)$, ed un vettore $b$ di lunghezza
-$m$, calcoli la soluzione del sistema lineare $Ax = b$ nel senso dei minimi quadrati e, inoltre, la
-norma, $nr$, del corrispondente vettore residuo. Curare particolarmente la scrittura e l'efficienza della
-\textit{function}. Validare la \textit{function} $miaqr$ su due esempi non banali, generati casualmente, confrontando
-la soluzione ottenuta con quella calcolata con l'operatore Matlab.
+Risolvere, utilizzando la \textit{function} $mialdlt$, i sistemi
+lineari generati da $[A,b]=linsis(10, 1, 1)$ e $[A,b]=linsis(10, 10, 1)$. Commentare l'accuratezza dei
+risultati ottenuti, dandone spiegazione esaustiva.
 \newline \textbf{Soluzione:}
-\lstinputlisting[language=Matlab]{capitolo3/es11_qr.m}

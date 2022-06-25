@@ -14,6 +14,10 @@ function [x, nr] = miaqr(A, b)
         error('Dimensioni errate');
     end
 
+    if length(b) ~= m
+        error('Dati inconsistenti');
+    end
+
     QR = A;
 
     for i = 1:n
@@ -65,8 +69,8 @@ function [x, nr] = miaqr(A, b)
 end
 
 %{
- 
+
 A = round (10 * rand (3))
 b = round (10 * rand (3, 1))
- 
+
 %}
