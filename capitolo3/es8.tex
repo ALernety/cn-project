@@ -1,2 +1,12 @@
 \subsection{Esercizio 8}
-\lstinputlisting[language=Matlab]{capitolo3/palu.m}
+Scrivere una function Matlab,
+\begin{lstlisting}[language=Matlab]
+    function x = mialu(A, b)
+\end{lstlisting}
+che, data in ingresso una matrice $A$ ed un vettore $b$, calcoli la soluzione
+del sistema lineare $Ax = b$ con il metodo di fattorizzazione $LU$ con pivoting parziale.
+Curare particolarmente la scrittura e l'efficienza della function,
+e validarla su due esempi non banali, generati casualmente,
+di cui sia nota la soluzione.
+\newline \textbf{Soluzione:}
+\lstinputlisting[language=Matlab]{capitolo3/es8_lu.m}

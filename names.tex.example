@@ -1,0 +1,7 @@
+\newcommand\wirterOneName{John}
+\newcommand\wirterOneSurname{Smith}
+\newcommand\wirterOneId{1234567}
+
+\newcommand\wirterTwoName{Nice}
+\newcommand\wirterTwoSurname{Guy}
+\newcommand\wirterTwoId{9876543}

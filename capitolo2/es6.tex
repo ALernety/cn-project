@@ -1,27 +1,44 @@
 \subsection{Esercizio 6}
+Utilizzare le $function$ del precedente esercizio per determinare una approssimazione
+della radice della funzione
+\[
+        f(x) = x - cos(\frac{\pi}{2}x),
+\]
+per $tol = 10^{-3}, 10^{-6}, 10^{-9}, 10^{-12},$ partendo da $x_0 = 1$
+(e $x_1 = 0.99$ per il metodo delle secanti). Tabulare i risultati,
+in modo da confrontare le iterazioni richieste da ciascun metodo. Commentare
+il relativo costo computazionale, in termini di valutazioni funzionali richieste.
+\newline \textbf{Soluzione:}
+
+
+
+
+
+
+
+
 Eseguendo lo script \nameref{cod:6}si ottengono i risultati contenuti nella tabella \ref{tab:6}
 e nella figura \ref{fig:es6}. Come si può notare, il metodo di newton e il metodo delle secanti
-convergono molto più rapidamente del metodo di bisezione e del metodo delle corde. 
+convergono molto più rapidamente del metodo di bisezione e del metodo delle corde.
 \begin{table}[h]
         \renewcommand\arraystretch{2}
-\begin{tabular}{|l l l l l|}
-        \hline
-        Metodo & tolleranza$=10^{-3}$  & tolleranza$=10^{-6}$ & tolleranza$=10^{-9}$ & tolleranza$=10^{-12}$ \\
-        \hline
-        bisezione & 0.739257812500000 &  0.739085197448730  & 0.739085133187473 &  0.739085133215667\\
-        newton   &  0.739085133385284 &  0.739085133215161  & 0.739085133215161 & 0.739085133215161 \\
-        corde    &  0.739567202212256  & 0.739084549575213 & 0.739085132739254 & 0.739085133215737 \\
-        secanti  &  0.739085133215001  & 0.739085133215161  &  0.739085133215161  &  0.739085133215161 \\
-        \hline
-\end{tabular}
-\caption{valori approssimati da bisezione, newton, secanti, corde}
-\label{tab:6}     
+        \begin{tabular}{|l l l l l|}
+                \hline
+                Metodo     & tolleranza$=10^{-3}$ & tolleranza$=10^{-6}$ & tolleranza$=10^{-9}$ & tolleranza$=10^{-12}$ \\
+                \hline
+                newton     & 5.94611646360541e-01 & 5.94611644056836e-01 & 5.94611644056836e-01 & 5.94611644056836e-01  \\
+                secanti    & 5.94611646954077e-01 & 5.94611644056836e-01 & 5.94611644056836e-01 & 5.94611644056836e-01  \\
+                steffensen & 5.94611681141925e-01 & 5.94611644056837e-01 & 5.94611644056836e-01 & 5.94611644056836e-01  \\
+                \hline
+        \end{tabular}
+        \caption{valori approssimati con i metodi di Newton, secanti e Steffensen}
+        \label{tab:6}
 \end{table}
-\newpage
+% \newpage
 \begin{figure}[h!]
-\includegraphics[scale=0.7]{capitolo2/iter.png}
-\caption{iterazioni richieste}
-\label{fig:es6}
+        \includegraphics[scale=0.7]{capitolo2/es6_figure.png}
+        \caption{iterazioni richieste}
+        \label{fig:es6}
 \end{figure}
 
 

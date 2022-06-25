@@ -3,11 +3,13 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage[english]{babel}
+% \usepackage[italian]{babel}
+\usepackage{cancel}
 \usepackage[T1]{fontenc}
 \usepackage{url}
 \usepackage{import}
 \usepackage{nameref}
-\usepackage{framed  }
+\usepackage{framed}
 \usepackage{multirow}
 \usepackage{color}
 \usepackage[numbered, framed]{matlab-prettifier}
@@ -42,16 +44,17 @@
   \includegraphics[width=\textwidth/4]{logo_unifi.png}\\[\bigskipamount]
 }
 \posttitle{\end{center}}
-\date{}
+\date{\today}
+\input{names.tex}
 
 \begin{document}
 
 
 
-\title{\vspace{2cm}Elaborato di\\ \textbf{Calcolo Numerico}\\ Anno Accademico 2019/2020\vspace{3cm}}
+\title{\vspace{2cm}Elaborato di\\ \textbf{Calcolo Numerico}\\ Anno Accademico 2021/2022\vspace{3cm}}
 
-\author{Niccolò \emph{Piazzesi} - \texttt{6335623} - \textit{niccolo.piazzesi@stud.unifi.it}
-   \and Pietro \emph{Bernabei} - \texttt{6291312} - \textit{pietro.bernabei@stud.unifi.it}}
+\author{\wirterOneName{} \emph{\wirterOneSurname{}} - \texttt{\wirterOneId{}} - \textit{\MakeLowercase{\wirterOneName{}}.\MakeLowercase{\wirterOneSurname{}}@stud.unifi.it}
+  \and \wirterTwoName{} \emph{\wirterTwoSurname{}} - \texttt{\wirterTwoId{}} - \textit{\MakeLowercase{\wirterTwoName{}}.\MakeLowercase{\wirterTwoSurname{}}@stud.unifi.it}}
 
 
 \maketitle

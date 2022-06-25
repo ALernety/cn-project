@@ -1,2 +1,11 @@
 \subsection{Esercizio 9}
-\lstinputlisting[language=Matlab]{capitolo3/LUsolve.m}
+Scrivere una function Matlab,
+\begin{lstlisting}[language=Matlab]
+    function x = mialdl(A, b)
+\end{lstlisting}
+che, dati in ingresso una matrice sdp $A$ ed un vettore $b$, calcoli la soluzione
+del corrispondente sistema lineare utilizzando la fattorizzazione $LDL^T$.
+Curare particolarmente la scrittura e l'efficienza della function,
+e validarla su due esempi non banali, generati casualmente, di cui sia nota la soluzione.
+\newline \textbf{Soluzione:}
+\lstinputlisting[language=Matlab]{capitolo3/es9_ldl.m}

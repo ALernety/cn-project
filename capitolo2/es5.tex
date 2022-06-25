@@ -1,13 +1,34 @@
 \subsection{Esercizio 5}
+Scrivere function Matlab distinte che implementino efficientemente i seguenti metodi
+per la ricerca degli zeri di una funzione $f(x)$:
 \begin{itemize}
-    \item Metodo di bisezione
-    \lstinputlisting[language=Matlab]{capitolo2/bisezione.m}
+    \item il metodo di Newton;
+    \item il metodo delle secanti;
+    \item il metodo di Steffensen:
+\end{itemize}
+\begin{eqnarray}
+    x_{n+1}=x_n - \frac{f(x_n)^2}{f(x_n + f(x_n)) - f(x_n)}, & & \mbox{n=0,1,...}
+\end{eqnarray}
+Per tutti i metodi, utilizzare come criterio di arresto
+\[
+    \abs{x_{n+1} - x_n} \leq tol * (1 + \abs{x_n})
+\]
+essendo $tol$ una opportuna tolleranza specificata in ingresso. Curare particolarmente la robustezza
+del codice.
+\newline \textbf{Soluzione:}
+\begin{itemize}
     \item Metodo di Newton
-    \lstinputlisting[language=Matlab]{capitolo2/newton.m}
+          \lstinputlisting[language=Matlab]{capitolo2/es5_newton.m}
     \item Metodo delle secanti
-    \lstinputlisting[language=Matlab]{capitolo2/secanti.m}
-    \item Metodo delle corde
-    \lstinputlisting[language=Matlab]{capitolo2/corde.m}
+          \lstinputlisting[language=Matlab]{capitolo2/es5_secanti.m}
+          \item Metodo di Steffensen
+          \lstinputlisting[language=Matlab]{capitolo2/es5_steffensen.m}
+
+
+          % \item Metodo di bisezione
+          % \lstinputlisting[language=Matlab]{capitolo2/es5_bisezione.m}
+          % \item Metodo delle corde
+          % \lstinputlisting[language=Matlab]{capitolo2/es5_corde.m}
 \end{itemize}
 
 
