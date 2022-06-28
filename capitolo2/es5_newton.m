@@ -25,15 +25,16 @@ function [x, i] = newton(f, f1, x0, tolx, maxit)
     x = x0;
 
     for i = 1:maxit
+        x0 = x;
+
         fx = feval(f, x);
         f1x = feval(f1, x);
-        x = x - fx / f1x;
+        x = x - (fx / f1x);
 
         if abs(x - x0) <= tolx * (1 + abs(x0))
             break;
         end
 
-        x0 = x;
     end
 
     if abs(x - x0) > tolx * (1 + abs(x0))

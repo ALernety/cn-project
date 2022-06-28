@@ -17,7 +17,10 @@ function [x, i] = steffensen(f, x0, tolx, maxit)
         maxit = 100;
     end
 
+    x = x0;
+
     for i = 1:maxit
+        x0 = x;
         % get ready to do a large, but finite, number of iterations.
         % This is so that if the method fails to converge, we won't
         % be stuck in an infinite loop.
@@ -30,7 +33,6 @@ function [x, i] = steffensen(f, x0, tolx, maxit)
             break; % if we are, stop the iterations, we have our answer.
         end
 
-        x0 = x;
     end
 
     if abs(x - x0) > tolx * (1 + abs(x0))

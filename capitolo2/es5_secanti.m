@@ -24,19 +24,17 @@ function [x, i] = secanti(f, x0, x1, tolx, maxit)
     for i = 1:maxit
         f1 = feval(f, x1);
         df1 = (f1 - f0) / (x1 - x0);
-        x = x1 - (f1 / df1);
+        x0 = x1;
+        x1 = x1 - (f1 / df1);
+        f0 = f1;
 
         if abs(x1 - x0) <= tolx * (1 + abs(x0))
             break;
         end
 
-        x0 = x1;
-        x1 = x;
-        f0 = f1;
-
     end
 
-    if abs(x - x0) > tolx * (1 + abs(x0))
+    if abs(x1 - x0) > tolx * (1 + abs(x0))
         error('The method does not converge!');
     end
 

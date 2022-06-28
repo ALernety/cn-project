@@ -6,9 +6,9 @@ per la ricerca degli zeri di una funzione $f(x)$:
     \item il metodo delle secanti;
     \item il metodo di Steffensen:
 \end{itemize}
-\begin{eqnarray}
+\begin{eqnarray*}
     x_{n+1}=x_n - \frac{f(x_n)^2}{f(x_n + f(x_n)) - f(x_n)}, & & \mbox{n=0,1,...}
-\end{eqnarray}
+\end{eqnarray*}
 Per tutti i metodi, utilizzare come criterio di arresto
 \[
     \abs{x_{n+1} - x_n} \leq tol * (1 + \abs{x_n})
