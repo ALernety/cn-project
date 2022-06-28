@@ -9,8 +9,8 @@ esercizi per elaborato calcolo numerico
 * ❌: To do.
 
 1. **Chapter 1**
-    1. Exercise 1 - ✅
-    1. Exercise 2 - ❌
+    1. Exercise 1 - ✅⚠️
+    1. Exercise 2 - ✅⚠️
     1. Exercise 3 - ❌
 
 2. **Chapter 2**

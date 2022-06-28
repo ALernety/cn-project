@@ -1,5 +1,30 @@
 \subsection{Esercizio 2}
-Calcolare, motivandone i passaggi, la precisione di macchina della doppia precisione 
+Calcolare, motivandone i passaggi, la precisione di macchina della doppia precisione
 dello standard IEEE. Confrontare questa quantità con quanto ritornato dalla variabile eps di
 Matlab, commentando a riguardo.
-\newline \textbf{Soluzione:}
+\textbf{Soluzione:} \newline
+Dato un generico numero reale $x \in I$, con $I$ sottoinsieme della retta reale, e
+dato $\mathbf{M}$ come insieme dei numeri di macchina che appartengono a sottoinsieme
+della retta reale $I$, sappiamo dalla teoria che il numero di elementi di $\mathbf{M}$ é finito.
+Pertanto é necessario definire una funzione $fl: I V \mathbf{M}$, se $x \in I$ e $x \neq 0$ con
+$fl(x) = x(1 + \varepsilon_x)$, dove $\varepsilon_x$ é l'errore relativo della funzione tale che $\varepsilon_x \leq u$,
+\begin{equation*}
+    u =\begin{cases}
+        2^{1-m},             & per troncamento    \\
+        \frac{1}{2}*2^{1-m}, & per arrotondamento
+    \end{cases}
+\end{equation*}
+Poiché lo studio riguarda la doppia precisione, la mantissa $m$ è uguale a 53.
+Per confrontare questi valori con l'$eps$ di Matlab, è necessario eseguire il seguente codice.
+Le variabili $truncated$ e $rounded$ avranno rispettivamente i risultati del troncamento e dell'arrotondamento:
+\begin{lstlisting}[language=Matlab]
+>> a=eps
+a = 2.2204e-16
+>> truncated = 2^(1-53)
+truncated = 2.2204e-16
+>> rounded = (1/2)*(2^(1-53))
+rounded = 1.1102e-16
+\end{lstlisting}
+Dai precedenti valori, è chiaro che l'$epsilon$ di macchina combacia con il valore
+della precisione usato per il troncamento, mentre è il doppio esatto di quello per
+l'arrotondamento.
