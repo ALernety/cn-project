@@ -1,0 +1,18 @@
+\subsection{Esercizio 26}
+Scrivere una function Matlab,
+\[
+    [If, err, nfeval] = composita(fun, a, b, n, tol)
+\]
+in qui
+\begin{itemize}
+    \item $fun$ è l'identificatore di una function che calcoli (in modo vettoriale) la funzione integranda,
+    \item $a$ e b sono gli estremi dell'intervallo di integrazione,
+    \item $n$ è il grado di una formula di Newton-Cotes base,
+    \item $tol$ è l'accuratezza richiesta,
+\end{itemize}
+che calcoli, fornendo la stima $err$ dell'errore di quadratura, l'approssimazione $If$ dell'integrale,
+raddoppiando il numero di punti ed usando la formula composita corrispondente per stimare l'errore
+di quadratura, fino a soddisfare il requisito di accuratezza richiesto. In uscita è anche il numero
+totale di valutazioni funzionali effettuate, $nfeval$.
+\newline N.B.: evitare di effettuare valutazioni di funzione ridondanti.
+\newline \textbf{Soluzione:}

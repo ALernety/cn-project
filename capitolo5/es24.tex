@@ -1,27 +1,31 @@
 \subsection{Esercizio 24}
-\lstinputlisting[language=Matlab]{capitolo5/trapecomp.m}
-\lstinputlisting[language=Matlab]{capitolo5/simpcomp.m}
-Approssimando $\displaystyle \int_{-1}^{1.1}tan(x)dx$ con le due formule si ottiene:
-\begin{table}[h]
-    \begin{tabular}{|c|c|c |}
-    \hline
-    intervalli$\backslash$formula & trapezi composita         &simpson composita\\
-    \hline
-    $2$                           &$0.266403558406035$        &$0.266403558406035$ \\
-    $4$                           &$0.203432804450016$        &$0.182442553131343$ \\
-    $6$                           &$0.188498346613972$        &$0.177333443886033$ \\
-    $8$                           &$0.182789408875225$        &$0.175908277016961$ \\
-    $10$                          &$0.180034803521960$        &$0.175392868382289$ \\
-    $12$                          &$0.178504015707472$        &$0.175172572071972$ \\
-    $14$                          &$0.177568218195411$        &$0.175066546519247$ \\
-    $16$                          &$0.176955413111201$        &$0.175010747856527$ \\
-    $18$                          &$0.176532709616469$        &$0.174979254439942$ \\
-    $20$                          &$0.176229037552030$        &$0.174960448895386$ \\
-    \hline
-\end{tabular}
-\caption{risultati di \nameref{cod:24}}
-\label{tab:24}
-\end{table}
+Costruire una function Matlab che, dato in input $n$, restituisca i pesi della quadratura
+della formula di Newton-Cotes di grado $n$. Tabulare, quindi, i pesi delle formule di grado
+1, 2, \dots, 7 e 9 (come numeri razionali).
+\newline \textbf{Soluzione:}
+% \lstinputlisting[language=Matlab]{capitolo5/trapecomp.m}
+% \lstinputlisting[language=Matlab]{capitolo5/simpcomp.m}
+% Approssimando $\displaystyle \int_{-1}^{1.1}tan(x)dx$ con le due formule si ottiene:
+% \begin{table}[h]
+%     \begin{tabular}{|c|c|c |}
+%     \hline
+%     intervalli$\backslash$formula & trapezi composita         &simpson composita\\
+%     \hline
+%     $2$                           &$0.266403558406035$        &$0.266403558406035$ \\
+%     $4$                           &$0.203432804450016$        &$0.182442553131343$ \\
+%     $6$                           &$0.188498346613972$        &$0.177333443886033$ \\
+%     $8$                           &$0.182789408875225$        &$0.175908277016961$ \\
+%     $10$                          &$0.180034803521960$        &$0.175392868382289$ \\
+%     $12$                          &$0.178504015707472$        &$0.175172572071972$ \\
+%     $14$                          &$0.177568218195411$        &$0.175066546519247$ \\
+%     $16$                          &$0.176955413111201$        &$0.175010747856527$ \\
+%     $18$                          &$0.176532709616469$        &$0.174979254439942$ \\
+%     $20$                          &$0.176229037552030$        &$0.174960448895386$ \\
+%     \hline
+% \end{tabular}
+% \caption{risultati di \nameref{cod:24}}
+% \label{tab:24}
+% \end{table}
 
 
-La formula composita di simpson converge più rapidamente ed è più precisa rispetto alla formula dei trapezi
+% La formula composita di simpson converge più rapidamente ed è più precisa rispetto alla formula dei trapezi
