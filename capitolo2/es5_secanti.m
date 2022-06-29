@@ -35,7 +35,8 @@ function [x, i] = secanti(f, x0, x1, tolx, maxit)
     end
 
     if abs(x1 - x0) > tolx * (1 + abs(x0))
-        error('The method does not converge!');
+        warning('The method does not converge!');
     end
 
+    x = x1;
 end

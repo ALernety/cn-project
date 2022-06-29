@@ -36,7 +36,7 @@ function [x, i] = steffensen(f, x0, tolx, maxit)
     end
 
     if abs(x - x0) > tolx * (1 + abs(x0))
-        error(['Failed to converge in ' maxit ' iterations!']);
+        warning(['Failed to converge in ' maxit ' iterations!']);
     end
 
 end

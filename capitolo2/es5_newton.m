@@ -38,7 +38,7 @@ function [x, i] = newton(f, f1, x0, tolx, maxit)
     end
 
     if abs(x - x0) > tolx * (1 + abs(x0))
-        error('The method does not converge!');
+        warning('The method does not converge!');
     end
 
 end
