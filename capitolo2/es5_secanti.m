@@ -18,24 +18,32 @@ function [x, i] = secanti(f, x0, x1, tolx, maxit)
         maxit = 100;
     end
 
+    precisionEnough = false;
     i = 0;
     f0 = feval(f, x0);
 
     for i = 1:maxit
         f1 = feval(f, x1);
         df1 = (f1 - f0) / (x1 - x0);
+
+        if df1 == 0
+            warning(['Delta of f on iteration ' int2str(i) ' is zero!']);
+            break;
+        end
+
         x0 = x1;
         x1 = x1 - (f1 / df1);
         f0 = f1;
+        precisionEnough = abs(x1 - x0) <= tolx * (1 + abs(x0));
 
-        if abs(x1 - x0) <= tolx * (1 + abs(x0))
+        if precisionEnough
             break;
         end
 
     end
 
-    if abs(x1 - x0) > tolx * (1 + abs(x0))
-        warning('The method does not converge!');
+    if ~precisionEnough
+        warning(['Failed to converge in ' maxit ' iterations!']);
     end
 
     x = x1;
