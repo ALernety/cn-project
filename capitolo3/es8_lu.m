@@ -34,7 +34,7 @@ function x = mialu(A, b)
     x = zeros(n, 1);
     y = zeros(n, 1);
 
-    % calcolo delle soluzioni di Ly = b
+    % calculate answers for Ly = b
     for i = 1:1:n
         alpha = 0;
 
@@ -45,7 +45,7 @@ function x = mialu(A, b)
         y(i) = b(i) - alpha;
     end
 
-    % calcolo delle soluzioni di Ux = y
+    % calculate answers for Ux = y
     for i = n:-1:1
         alpha = 0;
 

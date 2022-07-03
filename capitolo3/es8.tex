@@ -10,3 +10,27 @@ e validarla su due esempi non banali, generati casualmente,
 di cui sia nota la soluzione.
 \newline \textbf{Soluzione:} \newline
 \lstinputlisting[language=Matlab]{capitolo3/es8_lu.m}
+\begin{lstlisting}[language=Matlab]
+>> A = round(10 * rand(5))
+A =
+    6    2    1    1    3
+   10    2    8    2    2
+    1    4    8   10    5
+    4    6   10    8    7
+    8    9    9    3    8
+>> b = round(10 * rand(5, 1))
+b =
+   8
+   7
+   4
+   3
+   2
+>> format longe
+>> es8_lu(A, b)
+ans =
+   1.358353510895884e+00
+  -6.125907990314771e-01
+  -1.044794188861986e+00
+   1.190072639225182e+00
+   3.099273607748184e-01
+\end{lstlisting}
