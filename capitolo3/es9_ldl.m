@@ -15,7 +15,7 @@ function x = mialdl(A, b)
         % article most efficient way is to use Cholesky Factorization.
         chol(A);
     catch
-        error('The matrix provided is not Symmetric Positive Definite!')
+        error('The matrix provided is not symmetric and postive definite!')
     end
 
     % Figure out the size of A.

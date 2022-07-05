@@ -1,5 +1,126 @@
 \subsection{Esercizio 11}
-Risolvere, utilizzando la \textit{function} $mialdlt$, i sistemi
-lineari generati da $[A,b]=linsis(10, 1, 1)$ e $[A,b]=linsis(10, 10, 1)$. Commentare l'accuratezza dei
-risultati ottenuti, dandone spiegazione esaustiva.
+Risolvere, utilizzando la \textit{function} \lstinline{mialdlt}, i sistemi
+lineari generati da \lstinline{[A,b]=linsis(10, 1, 1)} e \lstinline{[A,b]=linsis(10, 10, 1)}.
+Commentare l'accuratezza dei risultati ottenuti, dandone spiegazione esaustiva.
 \newline \textbf{Soluzione:} \newline
+\begin{lstlisting}
+>> [A, b] = linsis(10, 1, 1); es9_ldl(A,b)
+ans =
+
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+   10
+
+>> [A, b] = linsis(10, 10, 1); es9_ldl(A,b)
+error: The matrix provided is not symmetric and postive definite!
+error: called from
+    es9_ldl at line 18 column 9
+>> issymmetric(A)
+ans = 0
+>> disp(A)
+ Columns 1 through 6:
+
+   2.2071e+16   1.9811e+16   1.0993e+16   6.7675e+15   1.3364e+16   1.0584e+16
+   1.9811e+16   1.7783e+16   9.8672e+15   6.0745e+15   1.1995e+16   9.5003e+15
+   1.0993e+16   9.8672e+15   5.4751e+15   3.3706e+15   6.6559e+15   5.2715e+15
+   6.7675e+15   6.0745e+15   3.3706e+15   2.0751e+15   4.0975e+15   3.2453e+15
+   1.3364e+16   1.1995e+16   6.6559e+15   4.0975e+15   8.0913e+15   6.4084e+15
+   1.0584e+16   9.5003e+15   5.2715e+15   3.2453e+15   6.4084e+15   5.0755e+15
+   2.0487e+16   1.8389e+16   1.0204e+16   6.2817e+15   1.2404e+16   9.8242e+15
+   7.9279e+15   7.1161e+15   3.9486e+15   2.4309e+15   4.8001e+15   3.8018e+15
+   1.2457e+16   1.1182e+16   6.2044e+15   3.8196e+15   7.5425e+15   5.9737e+15
+   1.5248e+16   1.3687e+16   7.5946e+15   4.6754e+15   9.2325e+15   7.3122e+15
+
+ Columns 7 through 10:
+
+   2.0487e+16   7.9279e+15   1.2457e+16   1.5248e+16
+   1.8389e+16   7.1161e+15   1.1182e+16   1.3687e+16
+   1.0204e+16   3.9486e+15   6.2044e+15   7.5946e+15
+   6.2817e+15   2.4309e+15   3.8196e+15   4.6754e+15
+   1.2404e+16   4.8001e+15   7.5425e+15   9.2325e+15
+   9.8242e+15   3.8018e+15   5.9737e+15   7.3122e+15
+   1.9016e+16   7.3588e+15   1.1563e+16   1.4154e+16
+   7.3588e+15   2.8477e+15   4.4746e+15   5.4771e+15
+   1.1563e+16   4.4746e+15   7.0309e+15   8.6063e+15
+   1.4154e+16   5.4771e+15   8.6063e+15   1.0535e+16
+>> format longe
+>> disp(A)
+ Columns 1 through 3:
+
+   2.207133502469664e+16   1.981126557836726e+16   1.099281863161083e+16
+   1.981126557836726e+16   1.778262363275389e+16   9.867171565380158e+15
+   1.099281863161083e+16   9.867171565380158e+15   5.475068061459555e+15
+   6.767515938746646e+15   6.074533118106476e+15   3.370619639361842e+15
+   1.336359977492867e+16   1.199518850707852e+16   6.655856042547899e+15
+   1.058409016117170e+16   9.500296237347266e+15   5.271497324116954e+15
+   2.048677591564888e+16   1.838896279066364e+16   1.020361531077236e+16
+   7.927929366644855e+15   7.116122064813650e+15   3.948573548189618e+15
+   1.245719900290217e+16   1.118160172608130e+16   6.204415326193842e+15
+   1.524832690786999e+16   1.368692259256429e+16   7.594560634694994e+15
+
+ Columns 4 through 6:
+
+   6.767515938746645e+15   1.336359977492867e+16   1.058409016117170e+16
+   6.074533118106476e+15   1.199518850707852e+16   9.500296237347266e+15
+   3.370619639361842e+15   6.655856042547899e+15   5.271497324116955e+15
+   2.075056716322006e+15   4.097548896551350e+15   3.245295256617379e+15
+   4.097548896551350e+15   8.091300265464040e+15   6.408381945967175e+15
+   3.245295256617379e+15   6.408381945967175e+15   5.075495633339075e+15
+   6.281658195462521e+15   1.240419184924870e+16   9.824230530700708e+15
+   2.430862849482938e+15   4.800148019193132e+15   3.801760025575222e+15
+   3.819628160686575e+15   7.542498974581767e+15   5.973726430904327e+15
+   4.675444202752653e+15   9.232451856946562e+15   7.312184180038501e+15
+
+ Columns 7 through 9:
+
+   2.048677591564888e+16   7.927929366644854e+15   1.245719900290217e+16
+   1.838896279066365e+16   7.116122064813650e+15   1.118160172608130e+16
+   1.020361531077236e+16   3.948573548189618e+15   6.204415326193842e+15
+   6.281658195462522e+15   2.430862849482938e+15   3.819628160686575e+15
+   1.240419184924870e+16   4.800148019193132e+15   7.542498974581767e+15
+   9.824230530700708e+15   3.801760025575222e+15   5.973726430904327e+15
+   1.901597646668768e+16   7.358762495689930e+15   1.156286396919522e+16
+   7.358762495689931e+15   2.847678401518612e+15   4.474572729322452e+15
+   1.156286396919522e+16   4.474572729322452e+15   7.030920731540098e+15
+   1.415360947131403e+16   5.477133963570241e+15   8.606250711164449e+15
+
+ Column 10:
+
+   1.524832690786999e+16
+   1.368692259256429e+16
+   7.594560634694995e+15
+   4.675444202752653e+15
+   9.232451856946562e+15
+   7.312184180038501e+15
+   1.415360947131403e+16
+   5.477133963570241e+15
+   8.606250711164449e+15
+   1.053454506621843e+16
+>>
+\end{lstlisting}
+Nel \textbf{primo caso} notiamo che l'errore é uguale a zero, infatti abbiamo che i soluzioni di $A$
+sono tutti come aspettati: \lstinline{ans = [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]}
+\newline
+Considerando che la soluzione con perturbazioni consiste nel risolvere il sistema
+lineare $A(\epsilon)x(\epsilon) = b(\epsilon)$, dato che $\epsilon = 0 \rightarrow x(0) = x$
+la soluzione senza perturbazione.
+\newline
+\newline
+Nel \textbf{secondo caso} ci da errore \lstinline{The matrix provided is not symmetric and postive definite!}
+che significa che matrice non è \lstinline{simmetrica definita positiva}. Per controllare che è simmetrica
+basta eseguire commando \lstinline{issymmetric(A)} che ci ritorna \lstinline{0} che significa che
+non è simmetrica, quindi per controllare questa problema si stampa la matrice con commando \lstinline{disp(A)}.
+Ottenendo la matrice simmetrica ci serve alzare la precisione (con commando \lstinline{format longe})
+e ristampare il matrice \lstinline{A}. Con precisione alta vediamo che alemno valori di
+quarta colonna, prima riga e prima colonna, quarta riga non sono uguali, quindi infatti non è simmetrica.
+\newline
+E come in ~\nameref{subsec:es10} calcolando il numero di condizionamento
+$K(A^T\cdot A) = \|A^T A\|\cdot\|(A^T A)^{-1}\|$ abbiamo che $K = 10^{16}$
+Avendo $k \gg 1$ si ha un mal condizionamento del problema.
