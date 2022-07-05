@@ -1,9 +1,9 @@
 function x = mialu(A, b)
-    % x = mialu(A, b)
+    % Syntax: x = mialu(A, b)
     % Method of the secant, used to calculate a root of the equation f(x)=0
     % Input:  A     - a matrix rapresentation of the equations with unknown variables
     %         b     - result of unknown variables
-    % Output: x     - array to what equals unknown variables
+    % Output: x     - array of unknown variables
 
     % Calculate L and U matrixes
     n = length(A);

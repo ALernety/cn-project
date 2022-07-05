@@ -9,3 +9,70 @@ Curare particolarmente la scrittura e l'efficienza della function,
 e validarla su due esempi non banali, generati casualmente, di cui sia nota la soluzione.
 \newline \textbf{Soluzione:} \newline
 \lstinputlisting[language=Matlab]{capitolo3/es9_ldl.m}
+Per verificare che soluzioni sono giusti è stata creata la funzione \nameref{cod:testMatrixSolution}
+che moltiplica valori di soluzione con la riga e somma tutti valori ottenuti
+dopodiché stampa questo valore, che deve essere uguale allo valore di stessa riga di $b$.
+\begin{lstlisting}[language=Matlab]
+>> matrixDimension = 5;
+>> A = round(10 * rand(matrixDimension));
+>> A = A * A'
+A =
+
+   170   189   102   166    90
+   189   278    96   203   115
+   102    96    93   108    41
+   166   203   108   195   103
+    90   115    41   103    87
+
+>> b = round(10 * rand(matrixDimension, 1))
+b =
+
+   2
+   6
+   3
+   1
+   4
+
+>> solutions = es9_ldl(A, b)
+solutions =
+
+  -0.2009
+   0.1788
+   0.3425
+  -0.3300
+   0.2468
+
+>> testMatrixSolution(A,solutions)
+2.0000
+6.0000
+3.0000
+1
+4.0000
+>> ;
+>> ;
+>> ;
+>> matrixDimension = 2;
+>> A = round(10 * rand(matrixDimension));
+>> A = A * A'
+A =
+
+   162    81
+    81    65
+
+>> b = round(10 * rand(matrixDimension, 1))
+b =
+
+   2
+   9
+
+>> solutions = es9_ldl(A, b)
+solutions =
+
+  -0.1509
+   0.3265
+
+>> testMatrixSolution(A,solutions)
+2
+9
+>>
+\end{lstlisting}
