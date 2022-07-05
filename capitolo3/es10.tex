@@ -1,7 +1,49 @@
 \subsection{Esercizio 10}
 Data la function Matlab
 \lstinputlisting{capitolo3/es10_linsis.m}
-che crea sistemi lineari casuali con soluzione nota, risolvere, utilizzando la \textit{function} $mialu$, i sistemi
-lineari generati da $[A,b]=linsis(10,1)$ e $[A,b]=linsis(10,10)$. Commentare l'accuratezza dei
+che crea sistemi lineari casuali con soluzione nota, risolvere, utilizzando la \textit{function} \lstinline{mialu}, i sistemi
+lineari generati da \lstinline{[A,b]=linsis(10,1)} e \lstinline{[A,b]=linsis(10,10)}. Commentare l'accuratezza dei
 risultati ottenuti, dandone spiegazione esaustiva.
 \newline \textbf{Soluzione:} \newline
+\begin{lstlisting}
+>> [A, b] = linsis(10, 1); es8_lu(A,b)
+ans =
+
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+   10
+
+>> [A, b] = linsis(10, 10); es8_lu(A,b)
+ans =
+
+  -307.6448
+   386.6526
+   184.3573
+  -342.4373
+   185.5085
+   551.9206
+  -137.7750
+    70.6324
+    -4.2105
+  -608.0000
+
+>>
+\end{lstlisting}
+Nel \textbf{primo caso} notiamo che l'errore é uguale a zero, infatti abbiamo che i soluzioni di $A$
+sono tutti come aspettati: \lstinline{ans = [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]}
+\newline
+Considerando che la soluzione con perturbazioni consiste nel risolvere il sistema
+lineare $A(\epsilon)x(\epsilon) = b(\epsilon)$, dato che $\epsilon = 0 \rightarrow x(0) = x$
+la soluzione senza perturbazione.
+\newline
+\newline
+Nel \textbf{secondo caso} calcolando il numero di condizionamento
+$K(A^T\cdot A) = \|A^T A\|\cdot\|(A^T A)^{-1}\|$ abbiamo che $K = 10^{16}$
+Avendo $k \gg 1$ si ha un mal condizionamento del problema.
