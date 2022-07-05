@@ -9,10 +9,10 @@ Curare particolarmente la scrittura e l'efficienza della function,
 e validarla su due esempi non banali, generati casualmente, di cui sia nota la soluzione.
 \newline \textbf{Soluzione:} \newline
 \lstinputlisting{capitolo3/es9_ldl.m}
-Per verificare che soluzioni sono esatte sto controllando risultati con comando $A * solutions$
-che moltiplica tutti colonne di $A$ con tutti rige di $solutions$ e alla fine somma tutti
+Per verificare che soluzioni sono esatte sto controllando risultati con comando \lstinline{A * solutions}
+che moltiplica tutti colonne di \lstinline{A} con tutti rige di \lstinline{solutions} e alla fine somma tutti
 elementi in riga che alla fine deve essere esattamente stesso numero
-che contiene $b$ sul stessa riga.
+che contiene \lstinline{b} sul stessa riga.
 \begin{lstlisting}
 >> matrixDimension = 5;
 >> A = round(10 * rand(matrixDimension));
