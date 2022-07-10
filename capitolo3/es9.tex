@@ -7,15 +7,16 @@ che, dati in ingresso una matrice sdp $A$ ed un vettore $b$, calcoli la soluzion
 del corrispondente sistema lineare utilizzando la fattorizzazione $LDL^T$.
 Curare particolarmente la scrittura e l'efficienza della function,
 e validarla su due esempi non banali, generati casualmente, di cui sia nota la soluzione.
-\newline \textbf{Soluzione:} \newline
+\newline \textbf{Soluzione:}
+
 \lstinputlisting{capitolo3/es9_ldl.m}
 Per verificare che soluzioni sono esatte sto controllando risultati con comando \lstinline{A * solutions}
 che moltiplica tutti colonne di \lstinline{A} con tutti rige di \lstinline{solutions} e alla fine somma tutti
 elementi in riga che alla fine deve essere esattamente stesso numero
 che contiene \lstinline{b} sul stessa riga.
 \begin{lstlisting}
->> matrixDimension = 5;
->> A = round(10 * rand(matrixDimension));
+>> matrixDimension = randi(5);;
+>> A = randi(10, matrixDimension);
 >> A = A * A'
 A =
 
@@ -25,7 +26,7 @@ A =
     72    46    94    56    78
    101   109   175    78   194
 
->> b = round(10 * rand(matrixDimension, 1))
+>> b = randi(10, matrixDimension, 1)
 b =
 
    8
@@ -55,15 +56,15 @@ ans =
 >> ;
 >> ;
 >> ;
->> matrixDimension = 2;
->> A = round(10 * rand(matrixDimension));
+>> matrixDimension = randi(5);
+>> A = randi(10, matrixDimension);
 >> A = A * A'
 A =
 
    68   58
    58   50
 
->> b = round(10 * rand(matrixDimension, 1))
+>> b = randi(10, matrixDimension, 1)
 b =
 
    2

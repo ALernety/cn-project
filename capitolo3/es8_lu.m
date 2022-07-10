@@ -17,7 +17,6 @@ function x = mialu(A, b)
         r = n - (n - k + 1) + r;
 
         A([k r], :) = A([r k], :);
-        % P([k r], :) = P([r k], :);
         L([k r], :) = L([r k], :);
         b([k r], :) = b([r k], :);
 
