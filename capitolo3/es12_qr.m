@@ -1,76 +1,57 @@
 function [x, nr] = miaqr(A, b)
-    %   QR = myqr(A)
-    %   calcola la fattorizzazione QR di Householder della matrice A
-    %   Input:
-    %           A= matrice quadrata da fattorizzare
-    %
-    %   Output:
-    %           QR=matrice contenente le informazioni sui fattori Q e R della
-    %           fattorizzazione QR di A
-    %
+    % Syntax: [x, nr] = miaqr(QR, b)
+    % Calculates Q and R matrixes and find solution for the matrix A
+    % using these matrixes.
+    % Input:    A   - a matrix rapresentation of the equations with unknown variables
+    %           b   - result of unknown variables
+    % Output:   x   - array of unknown variables
+    %           nr  - a norm, of the corresponding residual vector
+
     [m, n] = size(A);
 
     if n > m
-        error('Dimensioni errate');
+        error('Number of rows should be greather or equal then number of columns!');
     end
 
     if length(b) ~= m
-        error('Dati inconsistenti');
+        error('Size of b not match with number of rows!');
     end
 
-    QR = A;
+    % Start with R=A
+    R = A;
+    % Set Q as the identity matrix
+    Q = eye(m);
 
-    for i = 1:n
-        alfa = norm(QR(i:m, i));
+    for k = 1:n - 1
+        v = zeros(m, 1);
+        v(k:m, 1) = R(k:m, k);
+        g = norm(v);
 
-        if alfa == 0
+        if g == 0
             error('la matrice non ha rango massimo');
         end
 
-        if QR(i, i) >= 0
-            alfa = -alfa;
+        if 0 > R(k, k)
+            g = -g;
         end
 
-        v1 = QR(i, i) -alfa;
-        QR(i, i) = alfa;
-        QR(i + 1:m, i) = QR(i + 1:m, i) / v1;
-        beta = -v1 / alfa;
-        v = [1; QR(i + 1:m, i)];
-        QR(i:m, i + 1:n) = QR(i:m, i + 1:n) - (beta * v) * (v' * QR(i:m, i + 1:n));
-    end
+        v(k) = v(k) + g;
+        % Orthogonal transformation matrix that eliminates one element
+        % below the diagonal of the matrix it is post-multiplying:
+        s = norm(v);
 
-    [m, n] = size(QR);
-    k = length(b);
-
-    if k ~= m
-        error('Dati inconsistenti');
-    end
-
-    x = b(:);
-
-    for i = 1:n
-        v = [1; QR(i + 1:m, i)];
-        beta = 2 / (v' * v);
-        x(i:m) = x(i:m) - beta * (v' * x(i:m)) * v;
-    end
-
-    x = x(1:n);
-
-    for j = n:-1:1
-
-        if QR(j, j) == 0
-            error('Matrice singolare');
+        if s ~= 0, w = v / s; u = 2 * R' * w;
+            % Product HR
+            R = R - w * u';
+            % Product QR
+            Q = Q - 2 * Q * w * w';
         end
 
-        x(j) = x(j) / QR(j, j);
-        x(1:j - 1) = x(1:j - 1) - QR(1:j - 1, j) * x(j);
     end
+
+    c = Q' * b;
+
+    x = R \ c;
+    nr = A * x - b;
 
 end
-
-%{
-
-A = round (10 * rand (3))
-b = round (10 * rand (3, 1))
-
-%}
