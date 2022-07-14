@@ -12,10 +12,52 @@ D = diag(1:5);
 \end{lstlisting}
 Commentare i risultati ottenuti.
 \newline \textbf{Soluzione:}
+\begin{lstlisting}
+>> A = [ 1 3 2; 3 5 4; 5 7 6; 3 6 4; 1 4 2 ];
+>> b = [ 15 28 41 33 22 ]';
+>> D = diag(1:5);
+>> [x,nr]=es12_qr(A,b)
+x =
 
-\lstinputlisting{./capitolo3/es13.m}
-Il risultato finale è $ ris =\left(\begin{array}{c}
-    1 \\
-    2 \\
-    3 \\
-\end{array}\right)$  
+   3.0000
+   5.8000
+  -2.5000
+
+nr =
+
+   4.0000e-01
+   2.1316e-14
+  -4.0000e-01
+   8.0000e-01
+  -8.0000e-01
+
+>> [c,r] = qr(A,b); r\c
+ans =
+
+   3.0000
+   5.8000
+  -2.5000
+
+>> (D*A)*x
+ans =
+
+    15.400
+    56.000
+   121.800
+   135.200
+   106.000
+
+>> D*b
+ans =
+
+    15
+    56
+   123
+   132
+   110
+
+>>
+\end{lstlisting}
+Si vede che le soluzioni sono uguali per metodo implementato e quello di matlab,
+però non rispettano la ugualianza richiesta in esercizio, anche se tendano per rispettare.
+Questo dato da precisione di numeri con virgola mobile che sono usati in matlab.
