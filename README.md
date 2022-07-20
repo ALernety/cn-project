@@ -28,7 +28,7 @@ esercizi per elaborato calcolo numerico
     4. Exercise 11 - ✅⚠️
     5. Exercise 12 - ✅⚠️
     6. Exercise 13 - ✅⚠️
-    7. Exercise 14 - ❌
+    7. Exercise 14 - ✅⚠️
 
 4. **Chapter 4**
     
