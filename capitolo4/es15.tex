@@ -14,15 +14,35 @@ nullo, i seguenti sistemi nonlineari, utilizzando tolleranze $tol = 1e-3$, $1e-8
 Tabulare i risultati ottenuti, commentandone l'accuratezza.
 \newline \textbf{Soluzione:}
 
-% Eseguendo il codice \nameref{cod:15} si ottengono i seguenti risultati:
+Eseguendo lo script \nameref{cod:15} si ottengono i risultati contenuti nella tabella \ref{tab:15}
+e nella figura \ref{fig:es15}.
+\begin{table}[h]
+    \renewcommand\arraystretch{2}
+    \resizebox{\columnwidth}{!}{
+        \begin{tabular}{|l l l l l|}
+            \hline
+            Funzione   & \vline & tolleranza$=10^{-3}$  & tolleranza$=10^{-8}$  & tolleranza$=10^{-13}$ \\
+            \hline
+            $f_1(x_1)$ & \vline & 1.000119399056337e+00 & 1.000000007127784e+00 & 1.000000000000000e+00 \\
+            $f_1(x_2)$ & \vline & 2.000000000000000e+00 & 2.000000000000000e+00 & 2.000000000000000e+00 \\
+            \hline
+            $f_2(x_1)$ & \vline & 9.999998150012226e-01 & 1.000000000000042e+00 & 1.000000000000042e+00 \\
+            $f_2(x_2)$ & \vline & 9.999997068384456e-01 & 9.999999999999842e-01 & 9.999999999999842e-01 \\
+            $f_2(x_3)$ & \vline & 1.000000239080166e+00 & 9.999999999999871e-01 & 9.999999999999871e-01 \\
+            \hline
+        \end{tabular}
+    }
+    \caption{valori approssimati con i metodi di Newton, secanti e Steffensen}
+    \label{tab:15}
+\end{table}
+\begin{figure}[!ht]
+    \includegraphics[width=16cm,height=12cm,keepaspectratio]{capitolo4/es15_figure.png}
+    \caption{iterazioni richieste}
+    \label{fig:es15}
+\end{figure}
+\newline
+Come si vede da risultati ottentui l'accuratezza di funzione di esercizio precedente
+rispetta la tolleranza richiesta, quindi criterio di arresto è stato scielto in modo giusto.
 
-% \begin{figure}[h]
-%     \includegraphics[scale=0.8]{capitolo4/interpol.png}
-%     \caption{risultati interpolazione}
-%     \label{fig:15}
-% \end{figure}
-
-
-% Per le ascisse di chebyshev, si ha una decrescita esponenziale dell'errore massimo per $ n \le 25$ per poi assestarsi a circa $2\cdot10^{-15}$ per n successivi.
-% Per quanto riguarda le ascisse equidistanti invece, si può notare come l'errore massimo torni  a crescere esponenzialmente per $n >25$. I risultati confermano
-% il mal condizionamento del problema di interpolazione polinomiale quando vengono usate ascisse d'interpolazione equidistanti,
+Parlando di iterazioni richeiste, si vede, che in funzione con più esponenziali, cioè prima
+sono richiesti più iterazioni dato la più alta complessità dei calcoli.

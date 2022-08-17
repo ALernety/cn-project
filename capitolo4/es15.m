@@ -1,20 +1,21 @@
-%Codice esercizio 15
+syms x1 x2 x3;
 
-f = @(x)(cos((pi*x.^2)/2));
-x = linspace(-1, 1, 100001);
-linerrors = zeros(1, 40);
-chebyerrors = zeros(1, 40);
-for n = 1:40
-    xlin = linspace(-1, 1, n+1);
-    xcheby = chebyshev(-1,1,n+1);
-    ylin = lagrange(xlin,f(xlin),x);
-    ycheby = lagrange(xcheby,f(xcheby),x);
-    linerrors(n) = norm(abs(f(x) - ylin), inf);
-    chebyerrors(n) = norm( abs(f(x) - ycheby), inf);
+x = zeros(6, 3);
+y = zeros(3, 2);
+
+fn1 = @(x1, x2) [(x1^2 + 1) * (x2 - 2); exp(x1 - 1) + exp(x2 - 2) - 2];
+fn2 = @(x1, x2, x3) [x1 - x2 * x3; exp(x1 + x2 + x3 - 3) - x2; x1 + x2 + 2 * x3 - 4];
+
+for i = 3:5:13
+    n = (i - 3) / 5 + 1;
+    [x(n, 1:2), y(n, 1)] = es14_newton(fn1, matlabFunction(jacobian(sym(fn1))), zeros(1, 2), 10^(-i));
+    [x(n + 3, 1:3), y(n, 2)] = es14_newton(fn2, matlabFunction(jacobian(sym(fn2))), zeros(1, 3), 10^(-i));
 end
-semilogy(linerrors);
-hold on;
-semilogy(chebyerrors);
-xlabel('numero di ascisse di interpolazione');
-ylabel('massimo errore di interpolazione');
-legend({'ascisse  equidistanti', 'ascisse di chebyshev'},'Location','northeast');   
+
+disp(x)
+figure
+plot([3, 8, 13], y, 'o-');
+title('iterazioni richieste per la convergenza al diminuire di tol');
+xlabel('tolleranza = 10^{-x}');
+ylabel('iterazioni');
+legend(['f_1(x)'; 'f_2(x)'], 'Location', 'northwest');

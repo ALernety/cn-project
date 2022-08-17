@@ -32,7 +32,7 @@ esercizi per elaborato calcolo numerico
 
 4. **Chapter 4**
     
-    1. Exercise 15 - ❌
+    1. Exercise 15 - ✅⚠️
     2. Exercise 16 - ❌
     3. Exercise 17 - ❌
     4. Exercise 18 - ❌
