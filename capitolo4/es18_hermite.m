@@ -8,9 +8,10 @@ function H = hermite(x, y, dx_i, xq)
     %         xq    - query points
     % Output: H     - interpolated values at query points
     n = length(x);
-    step_between_values = size(dx_i)(1) + 1;
+    size_dx_i = size(dx_i);
+    step_between_values = size_dx_i(1) + 1;
 
-    if n ~= length(y) || n ~= size(dx_i)(2)
+    if n ~= length(y) || n ~= size_dx_i(2)
         error('Size of coordinates vector and function values are not match!');
     end
 
