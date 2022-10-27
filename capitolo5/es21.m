@@ -48,17 +48,14 @@ for n_i = n
 
 end
 
-figure(1);
 method = ["Lagrange"; "Newton"; "Hermite"; "spline0"; "spline"];
-spaces = ["Equidistant"; "Chebyshev"];
 
 for space = [EQU CHEB]
 
-    subplot(2, 1, space);
+    figure();
     plot(n, log(error_list(:, space:2:end)), "-o");
     xlabel('numero di punti');
     ylabel('errore = e^{x}');
-    title(spaces(space, :));
     legend(method, 'Location', 'northwest');
 
 end
