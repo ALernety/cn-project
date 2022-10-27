@@ -46,7 +46,7 @@ esercizi per elaborato calcolo numerico
    1. Exercise 21 - ✅⚠️
    2. Exercise 22 - ✅⚠️
    3. Exercise 23 - ✅⚠️
-   4. Exercise 24 - ❌
+   4. Exercise 24 - ✅⚠️
    5. Exercise 25 - ❌
    6. Exercise 26 - ❌
    7. Exercise 27 - ❌
