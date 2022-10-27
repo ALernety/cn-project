@@ -9,4 +9,5 @@
 *.lof
 *.lot
 *.env.tex
-relazione.pdf
+relazione.*
+!relazione.tex
