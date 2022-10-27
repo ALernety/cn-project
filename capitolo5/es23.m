@@ -1,9 +1,18 @@
-%Codice esercizio 23
+syms x;
 
-value = log(cos(1)/cos(1.1));
-x = zeros(1,9);
-errors=zeros(1, 9);
-for i = 1:9
-    x(i) = newtoncotes(@tan, -1,1.1, i);
-    errors(i) = abs(value-x(i));
+f = @(x) sin(pi .* x.^2);
+f_t = @(x) f(x) + 10^(-1) * rand(size(x));
+n = 1e4;
+m = [1:15];
+x = ((0:n) / n);
+err = ones(1, 15);
+
+for i = 1:15
+    p = polyfit(x, f_t(x), i);
+    y = polyval(p, x);
+    err (i) = norm(y - f(x), Inf);
 end
+
+semilogy(m, err);
+xlabel("m");
+ylabel("||f - p||");
