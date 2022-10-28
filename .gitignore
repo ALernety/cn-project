@@ -11,3 +11,4 @@
 *.env.tex
 relazione.*
 !relazione.tex
+octave-workspace
