@@ -1,25 +1,36 @@
-%Codice esercizio 25
+syms x;
+format longe;
 
-format long e
-f = @(x)(1/(1+100*x.^2));
-a = -1;
+fx = @(x) exp(1).^(3 .* x);
+a = 0;
 b = 1;
-itrap = zeros(1, 5);
-trap_points = zeros(1, 5);
-isimp = zeros(1, 5);
-simp_points = zeros(1, 5);
-for i = 1:5
-    [itrap(i), points] = adaptrap(f, a, b, 10^(-i-1));
-    trap_points(i) =  length(points);
-    [isimp(i), points] = adapsim(f, a, b, 10^(-i-1));
-    simp_points(i) = length(points);
+ifx = integral(fx, a, b);
+n_list = [1 2 3 4 5 6 7 9];
+errors = zeros(length(n_list), 1);
+i = 0;
+weights = {};
+
+for k = n_list
+    weights = [weights{:}, {es24_NewtonCotesWeights(k)}];
 end
-integrali = [itrap; isimp];
-npoints = [trap_points; simp_points];
-row_names = {'trapezi adattiva', 'simpson adattiva'};
-colnames = {'10^-2','10^-3','10^-4','10^-5','10^-6'};
-values = array2table(integrali,'RowNames',row_names,'VariableNames',colnames);
-npoints = array2table(npoints,'RowNames',row_names,'VariableNames',colnames);
-disp(values);
-format
-disp(npoints);
+
+for weight = weights
+    n = length(weight{1}) - 1;
+    h = (b - a) / n;
+    approx_ifx = 0;
+
+    for k = 0:n
+        approx_ifx = approx_ifx + (weight{1}(k + 1) * fx(a + (k * h)));
+    end
+
+    approx_ifx = approx_ifx * h;
+    i = i + 1;
+    errors(i) = abs(ifx - approx_ifx);
+end
+
+figure();
+plot(n_list, log(errors), '-o');
+xlabel("grado");
+ylabel('errore = e^{x}');
+
+disp(errors);
