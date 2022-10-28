@@ -1,4 +1,4 @@
-\subsection{Esercizio 30}
+\subsection{Esercizio 27}
 Tabulare il numero di valutazioni di funzione richieste per calcolare, mediante la
 function del precedente esercizio, l'approssimazione dell'integrale
 \[
@@ -8,3 +8,33 @@ utilizzando le formule di Newton-Cotes di grado n = 1, \dots, 7, e 9,
 e tolleranze $tol$ = $10^{-2}$, $10^{-3}$, $10^{-4}$, $10^{-5}$, $10^{-6}$.
 \newline \textbf{Soluzione:}
 
+Eseguendo lo script \nameref{cod:27} si ottengono i risultati contenuti nella
+tabella \ref{tab:27} e nella figura \ref{fig:es27}, che rappresenta il
+logaritmo naturale di numero di valutazioni funzionali.
+\begin{table}[h]
+    \centering
+    \renewcommand\arraystretch{2}
+    \begin{tabular}{| l | c c c c c |}
+        \hline
+        n & $10^{-2}$ & $10^{-3}$ & $10^{-4}$ & $10^{-5}$ & $10^{-6}$ \\
+        \hline
+        1 & 3         & 5         & 65        & 257       & 1025      \\
+        2 & 5         & 33        & 65        & 129       & 257       \\
+        3 & 7         & 7         & 13        & 97        & 193       \\
+        4 & 9         & 9         & 33        & 129       & 129       \\
+        5 & 11        & 11        & 11        & 41        & 161       \\
+        6 & 13        & 13        & 13        & 49        & 97        \\
+        7 & 15        & 15        & 15        & 29        & 113       \\
+        9 & 19        & 19        & 19        & 19        & 37        \\
+        \hline
+    \end{tabular}
+    \caption{numero di valutazioni funzionali rispetto a grado e tolleranza}
+    \label{tab:27}
+\end{table}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=16cm,height=10cm,keepaspectratio]{capitolo5/es27_figure.png}
+    \caption{logaritmo di numero di valutazioni funzionali}
+    \label{fig:es27}
+\end{figure}
+\FloatBarrier
