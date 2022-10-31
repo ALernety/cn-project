@@ -51,5 +51,5 @@ esercizi per elaborato calcolo numerico
    6. Exercise 26 - ✅⚠️
    7. Exercise 27 - ✅⚠️
    8. Exercise 28 - ✅⚠️
-   9. Exercise 29 - ❌
+   9. Exercise 29 - ✅⚠️
    10. Exercise 30 - ❌
