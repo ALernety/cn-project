@@ -7,3 +7,27 @@ degli Esercizi 29 e 30 per approssimare l'integral
 con tolleranze $tol$ = $10^{-2}$, $10^{-3}$, $10^{-4}$, $10^{-5}$, $10^{-6}$.
 \newline \textbf{Soluzione:}
 
+Eseguendo lo script \nameref{cod:30} si ottengono i risultati contenuti nella
+tabella \ref{tab:30} e nella figura \ref{fig:es30}, che rappresenta il
+logaritmo naturale di numero di valutazioni funzionali.
+\begin{table}[h]
+    \centering
+    \renewcommand\arraystretch{2}
+    \begin{tabular}{| l | c c c c c |}
+        \hline
+        Metodo           & $10^{-2}$ & $10^{-3}$ & $10^{-4}$ & $10^{-5}$ & $10^{-6}$ \\
+        \hline
+        adattivo trapezi & 303       & 991       & 3119      & 10123     & 31837     \\
+        adattivo Simpson & 85        & 185       & 341       & 625       & 1081      \\
+        \hline
+    \end{tabular}
+    \caption{numero di valutazioni funzionali rispetto a grado e tolleranza}
+    \label{tab:30}
+\end{table}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=16cm,height=10cm,keepaspectratio]{capitolo5/es30_figure.png}
+    \caption{logaritmo di numero di valutazioni funzionali}
+    \label{fig:es30}
+\end{figure}
+\FloatBarrier
