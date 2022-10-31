@@ -18,7 +18,7 @@ function [If, err, nfeval] = composita(fun, a, b, n, tol)
     end
 
     if n < 1
-        error("Grade of the Newto-Cotes formula is wrong!");
+        error("Grade of the Newton-Cotes formula is wrong!");
     end
 
     if a > b
