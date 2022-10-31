@@ -4,7 +4,7 @@ fx = @(x) sin(1 ./ (0.1 + x));
 a = 0;
 b = 1;
 grades = [1 2 3 4 5 6 7 9];
-tols = [10e-2 10e-3 10e-4 10e-5 10e-6];
+tols = [1e-2 1e-3 1e-4 1e-5 1e-6];
 
 nevals = zeros(length(grades), length(tols));
 

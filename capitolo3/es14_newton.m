@@ -9,7 +9,7 @@ function [x, nit] = newton(fun, jacobian, x0, tol, maxit)
     %                         @(x) [x(1)-x(2); x(1)+x(2)]
     %         jacobian  - jacobian matrix of the functions in variable 'fun'
     %         x0        - array of initail values
-    %         tol       - tolerance                     (default = 10e-6)
+    %         tol       - tolerance                     (default = 1e-6)
     %         maxit     - maximum number of iterations  (default = 100)
     % Output: x         - solution of non linear system
     %         nit       - number of iterations executed
