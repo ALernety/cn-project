@@ -10,9 +10,9 @@ colnames = {};
 
 for i = 3:3:12
     colnames{end + 1} = ['10^-' num2str(i)];
-    [x(i / 3, 1), y(i / 3, 1)] = es5_newton(f, f1, x0, 10^(-i));
-    [x(i / 3, 2), y(i / 3, 2)] = es5_secanti(f, x0, x1, 10^(-i));
-    [x(i / 3, 3), y(i / 3, 3)] = es5_steffensen(f, x0, 10^(-i));
+    [x(i / 3, 1), y(i / 3, 1)] = newton(f, f1, x0, 10^(-i));
+    [x(i / 3, 2), y(i / 3, 2)] = secanti(f, x0, x1, 10^(-i));
+    [x(i / 3, 3), y(i / 3, 3)] = steffensen(f, x0, 10^(-i));
 end
 
 row_names = {'newton', 'secanti', 'steffensen'};

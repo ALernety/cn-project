@@ -11,7 +11,7 @@ nevals = zeros(length(grades), length(tols));
 for n = 1:length(grades)
 
     for t = 1:length(tols)
-        [~, ~, nevals(n, t)] = es26_composita(fx, a, b, grades(n), tols(t));
+        [~, ~, nevals(n, t)] = composita(fx, a, b, grades(n), tols(t));
     end
 
 end

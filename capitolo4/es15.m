@@ -8,8 +8,8 @@ fn2 = @(x1, x2, x3) [x1 - x2 * x3; exp(x1 + x2 + x3 - 3) - x2; x1 + x2 + 2 * x3 
 
 for i = 3:5:13
     n = (i - 3) / 5 + 1;
-    [x(n, 1:2), y(n, 1)] = es14_newton(fn1, matlabFunction(jacobian(sym(fn1))), zeros(1, 2), 10^(-i));
-    [x(n + 3, 1:3), y(n, 2)] = es14_newton(fn2, matlabFunction(jacobian(sym(fn2))), zeros(1, 3), 10^(-i));
+    [x(n, 1:2), y(n, 1)] = newton(fn1, matlabFunction(jacobian(sym(fn1))), zeros(1, 2), 10^(-i));
+    [x(n + 3, 1:3), y(n, 2)] = newton(fn2, matlabFunction(jacobian(sym(fn2))), zeros(1, 3), 10^(-i));
 end
 
 disp(x)

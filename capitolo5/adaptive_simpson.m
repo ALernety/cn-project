@@ -53,9 +53,9 @@ function [In, err, nfeval] = adaptive_simpson(fx, a, b, tol, fx_a, fx_mid, fx_b)
     if err > tol
         new_tol = tol / 2;
         [fx_left, err_left, nfeval_left] = ...
-            es29_adaptive_simpson(fx, a, x_mid, new_tol, fx_a, fx_left, fx_mid);
+            adaptive_simpson(fx, a, x_mid, new_tol, fx_a, fx_left, fx_mid);
         [fx_right, err_right, nfeval_right] = ...
-            es29_adaptive_simpson(fx, x_mid, b, new_tol, fx_mid, fx_right, fx_b);
+            adaptive_simpson(fx, x_mid, b, new_tol, fx_mid, fx_right, fx_b);
         In = fx_left + fx_right;
         nfeval = nfeval + nfeval_left + nfeval_right;
         % Both values of err is positive, so to compensate

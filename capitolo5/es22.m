@@ -19,12 +19,12 @@ for n_i = n
     step = step + 1;
     space = linspace(a, b, n_i);
 
-    approx = es20_spline0(space, fx_sin(space), xq);
+    approx = spline0(space, fx_sin(space), xq);
     error_list(step, 1) = max(abs(fxq_sin - approx));
     approx = spline(space, fx_sin(space), xq);
     error_list(step, 2) = max(abs(fxq_sin - approx));
 
-    approx = es20_spline0(space, fx_cos(space), xq);
+    approx = spline0(space, fx_cos(space), xq);
     error_list(step, 3) = max(abs(fxq_cos - approx));
     approx = spline(space, fx_cos(space), xq);
     error_list(step, 4) = max(abs(fxq_cos - approx));

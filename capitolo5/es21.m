@@ -19,26 +19,26 @@ step = 0;
 for n_i = n
 
     step = step + 1;
-    space = {linspace(a, b, n_i); es19_chebyshev(n_i, a, b)};
+    space = {linspace(a, b, n_i); chebyshev(n_i, a, b)};
 
-    approx = es16_lagrange(space{EQU}, fx(space{EQU}), xq);
+    approx = lagrange(space{EQU}, fx(space{EQU}), xq);
     error_list(step, 1) = max(abs(fxq - approx));
-    approx = es16_lagrange(space{CHEB}, fx(space{CHEB}), xq);
+    approx = lagrange(space{CHEB}, fx(space{CHEB}), xq);
     error_list(step, 2) = max(abs(fxq - approx));
 
-    approx = es17_newton(space{EQU}, fx(space{EQU}), xq);
+    approx = newton(space{EQU}, fx(space{EQU}), xq);
     error_list(step, 3) = max(abs(fxq - approx));
-    approx = es17_newton(space{CHEB}, fx(space{CHEB}), xq);
+    approx = newton(space{CHEB}, fx(space{CHEB}), xq);
     error_list(step, 4) = max(abs(fxq - approx));
 
-    approx = es18_hermite(space{EQU}, fx(space{EQU}), dfx(space{EQU}), xq);
+    approx = hermite(space{EQU}, fx(space{EQU}), dfx(space{EQU}), xq);
     error_list(step, 5) = max(abs(fxq - approx));
-    approx = es18_hermite(space{CHEB}, fx(space{CHEB}), dfx(space{CHEB}), xq);
+    approx = hermite(space{CHEB}, fx(space{CHEB}), dfx(space{CHEB}), xq);
     error_list(step, 6) = max(abs(fxq - approx));
 
-    approx = es20_spline0(space{EQU}, fx(space{EQU}), xq);
+    approx = spline0(space{EQU}, fx(space{EQU}), xq);
     error_list(step, 7) = max(abs(fxq - approx));
-    approx = es20_spline0(space{CHEB}, fx(space{CHEB}), xq);
+    approx = spline0(space{CHEB}, fx(space{CHEB}), xq);
     error_list(step, 8) = max(abs(fxq - approx));
 
     approx = spline(space{EQU}, fx(space{EQU}), xq);

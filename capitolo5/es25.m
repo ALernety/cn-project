@@ -11,7 +11,7 @@ i = 0;
 weights = {};
 
 for k = n_list
-    weights = [weights{:}, {es24_NewtonCotesWeights(k)}];
+    weights = [weights{:}, {NewtonCotesWeights(k)}];
 end
 
 for weight = weights

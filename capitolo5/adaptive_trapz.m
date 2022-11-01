@@ -47,9 +47,9 @@ function [In, err, nfeval] = adaptive_trapz(fx, a, b, tol, fx_a, fx_b)
     if err > tol
         new_tol = tol / 2;
         [fx_left, err_left, nfeval_left] = ...
-            es28_adaptive_trapz(fx, a, x, new_tol, fx_a, fx_1);
+            adaptive_trapz(fx, a, x, new_tol, fx_a, fx_1);
         [fx_right, err_right, nfeval_right] = ...
-            es28_adaptive_trapz(fx, x, b, new_tol, fx_1, fx_b);
+            adaptive_trapz(fx, x, b, new_tol, fx_1, fx_b);
         In = fx_left + fx_right;
         nfeval = nfeval + nfeval_left + nfeval_right;
         % Both values of err is positive, so to compensate
