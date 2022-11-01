@@ -1,0 +1,43 @@
+\subsection{Esercizio 4}
+Scrivere una function Matlab, \lstinline{radice(x)} che, avendo in ingresso un numero \lstinline{x}
+non negativo, ne calcoli la radice quadrata utilizzando solo operazioni algebriche elementari, con
+la massima precisione possibile. Confrontare con la function \lstinline{sqrt} di Matlab per $20$ valori di
+$s$, equispaziati logaritmicamente nell'intervallo $[1e-10,1e10]$, evidenziando che si è ottenuta la
+massima precisione possibile.
+\newline \textbf{Soluzione:}
+
+Eseguendo lo script \nameref{cod:4} si ottengono i risultati contenuti nella
+tabella \ref{tab:4}.
+\lstinputlisting{capitolo1/es4_radice.m}
+\begin{table}[h]
+    \centering
+    \renewcommand\arraystretch{2}
+    \begin{tabular}{| l | c c |}
+        \hline
+            $x$                   & radice(x)             & sqrt(x)               \\
+        \hline
+            1.000000000000000e-10 & 9.999999999999999e-06 & 1.000000000000000e-05 \\
+            1.128837891684688e-09 & 3.359818286283781e-05 & 3.359818286283781e-05 \\
+            1.274274985703132e-08 & 1.128837891684688e-04 & 1.128837891684688e-04 \\
+            1.438449888287663e-07 & 3.792690190732250e-04 & 3.792690190732250e-04 \\
+            1.623776739188721e-06 & 1.274274985703133e-03 & 1.274274985703133e-03 \\
+            1.832980710832434e-05 & 4.281332398719391e-03 & 4.281332398719391e-03 \\
+            2.069138081114790e-04 & 1.438449888287663e-02 & 1.438449888287663e-02 \\
+            2.335721469090121e-03 & 4.832930238571752e-02 & 4.832930238571752e-02 \\
+            2.636650898730356e-02 & 1.623776739188721e-01 & 1.623776739188721e-01 \\
+            2.976351441631313e-01 & 5.455594781168515e-01 & 5.455594781168515e-01 \\
+            3.359818286283788e+00 & 1.832980710832437e+00 & 1.832980710832438e+00 \\
+            3.792690190732254e+01 & 6.158482110660267e+00 & 6.158482110660267e+00 \\
+            4.281332398719396e+02 & 2.069138081114790e+01 & 2.069138081114790e+01 \\
+            4.832930238571752e+03 & 6.951927961775604e+01 & 6.951927961775606e+01 \\
+            5.455594781168526e+04 & 2.335721469090124e+02 & 2.335721469090124e+02 \\
+            6.158482110660267e+05 & 7.847599703514616e+02 & 7.847599703514614e+02 \\
+            6.951927961775606e+06 & 2.636650898730358e+03 & 2.636650898730358e+03 \\
+            7.847599703514622e+07 & 8.858667904100832e+03 & 8.858667904100832e+03 \\
+            8.858667904100832e+08 & 2.976351441631319e+04 & 2.976351441631319e+04 \\
+            1.000000000000000e+10 & 1.000000000000000e+05 & 1.000000000000000e+05 \\
+        \hline
+    \end{tabular}
+    \caption{comparazione di funzioni per calcolare radice}
+    \label{tab:4}
+\end{table}
