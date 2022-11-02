@@ -32,18 +32,18 @@ esercizi per elaborato calcolo numerico
    5. Exercise 12 - ✅⚠️
    6. Exercise 13 - ✅⚠️
    7. Exercise 14 - ✅⚠️
+   8. Exercise 15 - ✅⚠️
 
 4. **Chapter 4**
 
-   1. Exercise 15 - ✅⚠️
-   2. Exercise 16 - ✅⚠️
-   3. Exercise 17 - ✅⚠️
-   4. Exercise 18 - ✅⚠️
-   5. Exercise 19 - ✅⚠️
-   6. Exercise 20 - ✅⚠️
-   7. Exercise 21 - ✅⚠️
-   8. Exercise 22 - ✅⚠️
-   9. Exercise 23 - ✅⚠️
+   1. Exercise 16 - ✅⚠️
+   2. Exercise 17 - ✅⚠️
+   3. Exercise 18 - ✅⚠️
+   4. Exercise 19 - ✅⚠️
+   5. Exercise 20 - ✅⚠️
+   6. Exercise 21 - ✅⚠️
+   7. Exercise 22 - ✅⚠️
+   8. Exercise 23 - ✅⚠️
 
 5. **Chapter 5**
    1. Exercise 24 - ✅⚠️
