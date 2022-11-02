@@ -6,10 +6,8 @@ x0 = 1;
 x1 = 9.9e-1;
 x = zeros(4, 3);
 y = zeros(4, 3);
-colnames = {};
 
 for i = 3:3:12
-    colnames{end + 1} = ['10^-' num2str(i)];
     [x(i / 3, 1), y(i / 3, 1)] = newton(f, f1, x0, 10^(-i));
     [x(i / 3, 2), y(i / 3, 2)] = secanti(f, x0, x1, 10^(-i));
     [x(i / 3, 3), y(i / 3, 3)] = steffensen(f, x0, 10^(-i));
