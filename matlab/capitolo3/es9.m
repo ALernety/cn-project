@@ -1,0 +1,21 @@
+format short;
+matrixDimension = randi(5);
+A = randi(10, matrixDimension);
+A = A * A';
+b = randi(10, matrixDimension, 1);
+solutions = [mialdl(A, b), A\b];
+disp(A);
+disp(b);
+format longe;
+disp(solutions);
+
+format short;
+matrixDimension = randi(5);
+A = randi(10, matrixDimension);
+A = A * A';
+b = randi(10, matrixDimension, 1);
+solutions = [mialdl(A, b), A\b];
+disp(A);
+disp(b);
+format longe;
+disp(solutions);
