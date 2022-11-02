@@ -19,7 +19,7 @@ esercizi per elaborato calcolo numerico
 
 2. **Chapter 2**
 
-   1. Exercise 5 - ✅⚠️
+   1. Exercise 5 - ✅
    2. Exercise 6 - ✅⚠️
    3. Exercise 7 - ✅⚠️
 

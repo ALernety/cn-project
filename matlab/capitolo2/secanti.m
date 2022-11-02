@@ -18,8 +18,7 @@ function [x, i] = secanti(f, x0, x1, tolx, maxit)
         maxit = 100;
     end
 
-    precisionEnough = false;
-    i = 0;
+    isSuffAccurate = false;
     f0 = feval(f, x0);
 
     for i = 1:maxit
@@ -27,23 +26,31 @@ function [x, i] = secanti(f, x0, x1, tolx, maxit)
         df1 = (f1 - f0) / (x1 - x0);
 
         if df1 == 0
-            warning(['Delta of f on iteration ' int2str(i) ' is zero!']);
+            warning([
+                'Delta of f on iteration '
+                int2str(i)
+                ' is zero!'
+                ]);
             break;
         end
 
         x0 = x1;
         x1 = x1 - (f1 / df1);
         f0 = f1;
-        precisionEnough = abs(x1 - x0) <= tolx * (1 + abs(x0));
+        isSuffAccurate = abs(x1 - x0) <= tolx * (1 + abs(x0));
 
-        if precisionEnough
+        if isSuffAccurate
             break;
         end
 
     end
 
-    if ~precisionEnough
-        warning(['Failed to converge in ' maxit ' iterations!']);
+    if ~isSuffAccurate
+        warning([
+            'Failed to converge in '
+            maxit
+            ' iterations!'
+            ]);
     end
 
     x = x1;

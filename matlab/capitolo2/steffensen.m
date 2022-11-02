@@ -17,35 +17,46 @@ function [x, i] = steffensen(f, x0, tolx, maxit)
         maxit = 100;
     end
 
-    precisionEnough = false;
+    isSuffAccurate = false;
 
     for i = 1:maxit
-        % get ready to do a large, but finite, number of iterations.
+        % Can do a large, but finite, number of iterations.
         % This is so that if the method fails to converge, we won't
         % be stuck in an infinite loop.
-        fx = feval(f, x0); % calculate the next two guesses for the fixed point.
+
+        % calculate the next two guesses for the fixed point.
+        fx = feval(f, x0);
         f_fx_x = feval(f, fx + x0);
 
         if (f_fx_x - fx) == 0
-            warning(['Distance betwen two guesses on iteration ' int2str(i) ' is zero!']);
+            warning([
+                'Distance betwen two guesses on iteration '
+                int2str(i)
+                ' is zero!'
+                ]);
             break;
         end
 
         x = x0 - (fx^2 / (f_fx_x - fx));
         % use Aitken's delta squared method to
         % find a better approximation to x0.
-        precisionEnough = abs(x - x0) <= tolx * (1 + abs(x0));
+        isSuffAccurate = abs(x - x0) <= tolx * (1 + abs(x0));
 
-        if precisionEnough
-            break; % if we are, stop the iterations, we have our answer.
+        if isSuffAccurate
+            % if we are, stop the iterations, we have our answer.
+            break;
         end
 
         x0 = x;
 
     end
 
-    if ~precisionEnough
-        warning(['Failed to converge in ' int2str(maxit) ' iterations!']);
+    if ~isSuffAccurate
+        warning([
+            'Failed to converge in '
+            int2str(maxit)
+            ' iterations!'
+            ]);
     end
 
 end

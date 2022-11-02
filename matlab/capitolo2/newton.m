@@ -22,22 +22,26 @@ function [x, i] = newton(f, f1, x0, tolx, maxit)
         error('Tolerance cannot be checked!');
     end
 
-    precisionEnough = false;
+    isSuffAccurate = false;
 
     for i = 1:maxit
         fx = feval(f, x0);
         f1x = feval(f1, x0);
 
         if f1x == 0
-            warning(['Value of f1 on iteration ' int2str(i) ' is zero!']');
+            warning([
+                'Value of f1 on iteration '
+                int2str(i)
+                ' is zero!'
+                ]);
             break;
         end
 
         x = x0 - (fx / f1x);
 
-        precisionEnough = abs(x - x0) <= tolx * (1 + abs(x0));
+        isSuffAccurate = abs(x - x0) <= tolx * (1 + abs(x0));
 
-        if precisionEnough
+        if isSuffAccurate
             break;
         end
 
@@ -45,8 +49,12 @@ function [x, i] = newton(f, f1, x0, tolx, maxit)
 
     end
 
-    if ~precisionEnough
-        warning(['Failed to converge in ' maxit ' iterations!']);
+    if ~isSuffAccurate
+        warning([
+            'Failed to converge in '
+            maxit
+            ' iterations!'
+            ]);
     end
 
 end
