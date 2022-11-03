@@ -3,7 +3,7 @@ syms x;
 f = @(x) sin(pi .* x.^2);
 f_t = @(x) f(x) + 10^(-1) * rand(size(x));
 n = 1e4;
-m = [1:15];
+m = (1:15);
 x = ((0:n) / n);
 err = ones(1, 15);
 

@@ -43,7 +43,7 @@ esercizi per elaborato calcolo numerico
    5. Exercise 20 - ✅
    6. Exercise 21 - ✅
    7. Exercise 22 - ✅
-   8. Exercise 23 - ✅⚠️
+   8. Exercise 23 - ✅
 
 5. **Chapter 5**
    1. Exercise 24 - ✅⚠️
