@@ -26,11 +26,8 @@ function [x, i] = secanti(f, x0, x1, tolx, maxit)
         df1 = (f1 - f0) / (x1 - x0);
 
         if df1 == 0
-            warning([
-                'Delta of f on iteration '
-                int2str(i)
-                ' is zero!'
-                ]);
+            warning(strcat('Delta of f on iteration ', ...
+                int2str(i), ' is zero!'));
             break;
         end
 
@@ -46,11 +43,8 @@ function [x, i] = secanti(f, x0, x1, tolx, maxit)
     end
 
     if ~isSuffAccurate
-        warning([
-            'Failed to converge in '
-            maxit
-            ' iterations!'
-            ]);
+        warning(strcat('Failed to converge in ', ...
+            int2str(maxit), ' iterations!'));
     end
 
     x = x1;

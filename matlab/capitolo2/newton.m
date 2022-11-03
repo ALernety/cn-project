@@ -29,11 +29,8 @@ function [x, i] = newton(f, f1, x0, tolx, maxit)
         f1x = feval(f1, x0);
 
         if f1x == 0
-            warning([
-                'Value of f1 on iteration '
-                int2str(i)
-                ' is zero!'
-                ]);
+            warning(strcat('Value of f1 on iteration ', ...
+                int2str(i), ' is zero !'));
             break;
         end
 
@@ -50,11 +47,8 @@ function [x, i] = newton(f, f1, x0, tolx, maxit)
     end
 
     if ~isSuffAccurate
-        warning([
-            'Failed to converge in '
-            maxit
-            ' iterations!'
-            ]);
+        warning(strcat('Failed to converge in ', ...
+            int2str(maxit), ' iterations !'));
     end
 
 end

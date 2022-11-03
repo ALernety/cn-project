@@ -29,11 +29,8 @@ function [x, i] = steffensen(f, x0, tolx, maxit)
         f_fx_x = feval(f, fx + x0);
 
         if (f_fx_x - fx) == 0
-            warning([
-                'Distance betwen two guesses on iteration '
-                int2str(i)
-                ' is zero!'
-                ]);
+            warning(strcat('Distance betwen two guesses on iteration=', ...
+                int2str(i), ' is zero !'));
             break;
         end
 
@@ -52,11 +49,8 @@ function [x, i] = steffensen(f, x0, tolx, maxit)
     end
 
     if ~isSuffAccurate
-        warning([
-            'Failed to converge in '
-            int2str(maxit)
-            ' iterations!'
-            ]);
+        warning(strcat('Failed to converge in maxit=', ...
+            int2str(maxit), ' iterations !'));
     end
 
 end
