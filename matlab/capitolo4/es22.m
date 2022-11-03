@@ -31,9 +31,9 @@ end
 
 figure(1);
 method = ["spline0 sin"; "spline sin"; "spline0 cos"; "spline cos"];
-plot(n, log(error_list), "-o");
+semilogy(n, error_list, "-o");
 xlabel('numero di punti');
-ylabel('errore = e^{x}');
+ylabel('errore');
 legend(method, 'Location', 'southwest');
 
 disp(error_list);

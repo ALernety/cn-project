@@ -53,9 +53,9 @@ method = ["Lagrange"; "Newton"; "Hermite"; "spline0"; "spline"];
 for space = [EQU CHEB]
 
     figure();
-    plot(n, log(error_list(:, space:2:end)), "-o");
+    semilogy(n, error_list(:, space:2:end), "-o");
     xlabel('numero di punti');
-    ylabel('errore = e^{x}');
+    ylabel('errore');
     legend(method, 'Location', 'northwest');
 
 end

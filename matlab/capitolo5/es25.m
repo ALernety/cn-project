@@ -29,8 +29,8 @@ for weight = weights
 end
 
 figure();
-plot(n_list, log(errors), '-o');
+semilogy(n_list, errors, '-o');
 xlabel("grado");
-ylabel('errore = e^{x}');
+ylabel('errore');
 
 disp(errors);

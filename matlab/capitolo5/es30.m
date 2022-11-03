@@ -15,7 +15,7 @@ end
 disp(nevals);
 
 figure();
-plot(tols, log(nevals'), '-o');
+semilogy(tols, nevals', '-o');
 xlabel('toleranza');
-ylabel('iterazioni = e^{x}');
+ylabel('iterazioni');
 legend(['adattivo trapezi'; 'adattivo Simpson']);

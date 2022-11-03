@@ -19,7 +19,7 @@ end
 disp(nevals);
 
 figure();
-plot(grades, log(nevals'), '-o');
+semilogy(grades, nevals', '-o');
 xlabel('grado');
-ylabel('iterazioni = e^{x}');
+ylabel('iterazioni');
 legend(num2str(tols'));
