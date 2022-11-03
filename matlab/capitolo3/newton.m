@@ -15,8 +15,11 @@ function [x, nit] = newton(fun, jacobian, x0, tol, maxit)
     %         nit       - number of iterations executed
     % CHECK THIS: bisezione, corde, secanti, aitken, newtonmod
 
+    if nargin < 3
+        error("Not enaugh arguments!");
+    end
     if nargin < 5, maxit = 100; end
-    if nargin < 4, tol = 10^ - 6; end
+    if nargin < 4, tol = 1e-6; end
 
     if tol < eps
         error('Tollerance is smaller then precision of the computer!');
@@ -30,8 +33,8 @@ function [x, nit] = newton(fun, jacobian, x0, tol, maxit)
         H = jacobian_x \ fun_x;
         x = num2cell(cell2mat(x) - H');
         fun_x = feval(fun, x{:});
-        % norm of matrix 'fun_x' corresponds to the precison of solution
-        if norm(fun_x) < tol, break, end
+        % norm of matrix 'H' corresponds to the precison of solution
+        if norm(H) < tol, break, end
     end
 
     x = cell2mat(x);
