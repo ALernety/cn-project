@@ -6,7 +6,7 @@ CHEB = 2;
 
 fx = @(x)(1 ./ (2 .* (2 .* x.^2 - 2 .* x + 1)));
 dfx = matlabFunction(diff(fx, x));
-n = [4 8 16 24 32 40];
+n = [4 8 16 32 40];
 a = -2;
 b = 3;
 error_list = zeros(length(n), 10);

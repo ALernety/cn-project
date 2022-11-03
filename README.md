@@ -41,7 +41,7 @@ esercizi per elaborato calcolo numerico
    3. Exercise 18 - ✅
    4. Exercise 19 - ✅
    5. Exercise 20 - ✅
-   6. Exercise 21 - ✅⚠️
+   6. Exercise 21 - ✅
    7. Exercise 22 - ✅⚠️
    8. Exercise 23 - ✅⚠️
 
