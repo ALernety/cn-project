@@ -44,7 +44,7 @@ function [x, nr] = miaqr(A, b)
             % Product HR
             R = R - w * u';
             % Product QR
-            Q = Q - 2 * Q * w * w';
+            Q = Q - 2 * Q * (w * w');
         end
 
     end
