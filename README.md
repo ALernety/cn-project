@@ -47,7 +47,7 @@ esercizi per elaborato calcolo numerico
 
 5. **Chapter 5**
    1. Exercise 24 - ✅
-   2. Exercise 25 - ✅⚠️
+   2. Exercise 25 - ✅
    3. Exercise 26 - ✅⚠️
    4. Exercise 27 - ✅⚠️
    5. Exercise 28 - ✅⚠️
