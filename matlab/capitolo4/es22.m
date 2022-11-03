@@ -3,7 +3,7 @@ format longe;
 
 fx_sin = @(x)(sin(2 .* pi .* x));
 fx_cos = @(x)(cos(2 .* pi .* x));
-n = [5:5:50];
+n = (5:5:50);
 a = 0;
 b = 1;
 error_list = zeros(length(n), 4);
@@ -15,7 +15,6 @@ fxq_cos = fx_cos(xq);
 step = 0;
 
 for n_i = n
-
     step = step + 1;
     space = linspace(a, b, n_i);
 
@@ -28,7 +27,6 @@ for n_i = n
     error_list(step, 3) = max(abs(fxq_cos - approx));
     approx = spline(space, fx_cos(space), xq);
     error_list(step, 4) = max(abs(fxq_cos - approx));
-
 end
 
 figure(1);
