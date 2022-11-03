@@ -1,0 +1,23 @@
+format short;
+matrixDimension = randi(3) + 2;
+A = randi(10, matrixDimension, matrixDimension + 1 - randi(3));
+b = randi(10, matrixDimension, 1);
+[c, r] = qr(A, b);
+solutions = [miaqr(A, b), r \ c];
+disp(A);
+disp(b);
+format longe;
+disp('Risposte');
+disp(solutions);
+
+format short;
+matrixDimension = randi(3) + 2;
+A = randi(10, matrixDimension, matrixDimension + 1 - randi(3));
+b = randi(10, matrixDimension, 1);
+[c, r] = qr(A, b);
+solutions = [miaqr(A, b), r \ c];
+disp(A);
+disp(b);
+format longe;
+disp('Risposte');
+disp(solutions);
