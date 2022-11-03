@@ -1,6 +1,6 @@
 function s = spline0(x, y, xq)
     % s = spline0(x, y, xq)
-    % The values of L are determined by natural cubic spline method
+    % The values of s are determined by natural cubic spline method
     % of interpolation of x and y
     % Input:  x     - x-coordinates vector
     %         y     - function values at x-coordinates
@@ -33,7 +33,7 @@ function s = spline0(x, y, xq)
     d = 2 * ones(m - 1, 1);
     phi = phi(2:m - 1);
     csi = csi(1:m - 2);
-    m_i = trisolve(phi, d, csi, rhs);
+    m_i = tridiag_gauss(phi, d, csi, rhs);
     m_i = [0; m_i; 0];
     r = y(1:m) - ((h_i(1:m).^2) / 6) .* m_i(1:m);
     q = df(1:m) - ((h_i(1:m) / 6) .* (m_i(2:n) - m_i(1:m)));

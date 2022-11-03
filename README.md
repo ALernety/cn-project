@@ -36,11 +36,11 @@ esercizi per elaborato calcolo numerico
 
 4. **Chapter 4**
 
-   1. Exercise 16 - ✅⚠️
-   2. Exercise 17 - ✅⚠️
-   3. Exercise 18 - ✅⚠️
-   4. Exercise 19 - ✅⚠️
-   5. Exercise 20 - ✅⚠️
+   1. Exercise 16 - ✅
+   2. Exercise 17 - ✅
+   3. Exercise 18 - ✅
+   4. Exercise 19 - ✅
+   5. Exercise 20 - ✅
    6. Exercise 21 - ✅⚠️
    7. Exercise 22 - ✅⚠️
    8. Exercise 23 - ✅⚠️

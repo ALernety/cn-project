@@ -1,6 +1,6 @@
 function H = hermite(x, y, dx_i, xq)
     % H = hermite(x, y, dx_i, xq)
-    % The values of L are determined by Newton's method interpolation
+    % The values of H are determined by Hermite's method interpolation
     % of x and y
     % Input:  x     - x-coordinates vector
     %         y     - function values at x-coordinates
@@ -31,7 +31,7 @@ function H = hermite(x, y, dx_i, xq)
         df(i:step_between_values:div_diff_size) = y(:);
     end
 
-    columns_to_calc = [step_between_values + 1:step_between_values:m];
+    columns_to_calc = (step_between_values + 1:step_between_values:m);
     % next columns of the table
     for i = 1:1:div_diff_size
 

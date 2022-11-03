@@ -1,6 +1,6 @@
 function N = newton(x, y, xq)
     % N = newton(x, y, xq)
-    % The values of L are determined by Newton's method interpolation
+    % The values of N are determined by Newton's method interpolation
     % of x and y
     % Input:  x     - x-coordinates vector
     %         y     - function values at x-coordinates
