@@ -24,28 +24,28 @@ e nella figura \ref{fig:es15}.
             \hline
             Funzione   & \vline & tolleranza$=10^{-3}$  & tolleranza$=10^{-8}$  & tolleranza$=10^{-13}$ \\
             \hline
-            $f_1(x_1)$ & \vline & 1.000119399056337e+00 & 1.000000007127784e+00 & 1.000000000000000e+00 \\
+            $f_1(x_1)$ & \vline & 1.000000007127784e+00 & 1.000000000000000e+00 & 1.000000000000000e+00 \\
             $f_1(x_2)$ & \vline & 2.000000000000000e+00 & 2.000000000000000e+00 & 2.000000000000000e+00 \\
             \hline
-            $f_2(x_1)$ & \vline & 9.999998150012226e-01 & 1.000000000000042e+00 & 1.000000000000042e+00 \\
-            $f_2(x_2)$ & \vline & 9.999997068384456e-01 & 9.999999999999842e-01 & 9.999999999999842e-01 \\
-            $f_2(x_3)$ & \vline & 1.000000239080166e+00 & 9.999999999999871e-01 & 9.999999999999871e-01 \\
+            $f_2(x_1)$ & \vline & 1.000000000000042e+00 & 1.000000000000000e+00 & 1.000000000000000e+00 \\
+            $f_2(x_2)$ & \vline & 9.999999999999842e-01 & 1.000000000000000e+00 & 1.000000000000000e+00 \\
+            $f_2(x_3)$ & \vline & 9.999999999999871e-01 & 1.000000000000000e+00 & 1.000000000000000e+00 \\
             \hline
         \end{tabular}
     }
-    \caption{valori approssimati con i metodi di Newton, secanti e Steffensen}
+    \caption{Soluzioni di sistemi nonlineari usando metodo di Newton}
     \label{tab:15}
 \end{table}
 \FloatBarrier
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=16cm,height=12cm,keepaspectratio]{capitolo3/es15_figure.png}
-    \caption{iterazioni richieste}
+    \caption{Iterazioni richieste per svolgere sistema nonlineare usando metodo di Newton}
     \label{fig:es15}
 \end{figure}
 \FloatBarrier
-Come si vede da risultati ottentui l'accuratezza di funzione di esercizio precedente
-rispetta la tolleranza richiesta, quindi criterio di arresto è stato scielto in modo giusto.
+Come si vede da risultati ottenuti l'accuratezza di funzione di esercizio precedente
+rispetta la tolleranza richiesta, quindi criterio di arresto è stato scelto in modo giusto.
 
-Parlando di iterazioni richeiste, si vede, che in funzione con più esponenziali, cioè prima
+Parlando di iterazioni richieste, si vede, che in funzione con più esponenziali, cioè $f_{1}$
 sono richiesti più iterazioni dato la più alta complessità dei calcoli.
