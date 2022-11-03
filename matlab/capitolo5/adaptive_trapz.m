@@ -57,6 +57,7 @@ function [In, err, nfeval] = adaptive_trapz(fx, a, b, tol, fx_a, fx_b)
         err = abs(err_left + err_right);
         return;
     end
+
     % Compensate sum of two positive errors
     err = err / 2;
 end

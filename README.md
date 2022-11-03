@@ -50,6 +50,6 @@ esercizi per elaborato calcolo numerico
    2. Exercise 25 - ✅
    3. Exercise 26 - ✅
    4. Exercise 27 - ✅
-   5. Exercise 28 - ✅⚠️
-   6. Exercise 29 - ✅⚠️
-   7. Exercise 30 - ✅⚠️
+   5. Exercise 28 - ✅
+   6. Exercise 29 - ✅
+   7. Exercise 30 - ✅
