@@ -1,3 +1,4 @@
+.vscode/*
 *.aux
 *.log
 *.out
@@ -7,3 +8,7 @@
 *.fls
 *.lof
 *.lot
+*.env.tex
+relazione.*
+!relazione.tex
+octave-workspace
