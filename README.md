@@ -1,51 +1,55 @@
 # elaboratoCalcolo
+
 esercizi per elaborato calcolo numerico
 
-## RIASSUNTO 
+## RIASSUNTO
 
-### list of chapters and relative exercises ###
+### list of chapters and relative exercises
 
-:heavy_check_mark: Done.
-:heavy_exclamation_mark: : To be revised.
-:x: To do.
+- ✅: Done.
+- ⚠️: To be revised.
+- ❌: To do.
 
 1. **Chapter 1**
-    1. Exercise 1 - :heavy_check_mark:
-    1. Exercise 2 - :heavy_check_mark:
-    1. Exercise 3 - :heavy_check_mark:
+
+   1. Exercise 1 - ✅
+   2. Exercise 2 - ✅
+   3. Exercise 3 - ✅
+   4. Exercise 4 - ✅
 
 2. **Chapter 2**
-    
-    1. Exercise 4 - :heavy_check_mark:
-    1. Exercise 5 - :heavy_check_mark:
-    1. Exercise 6 - :heavy_check_mark:
-    1. Exercise 7 - :heavy_check_mark:
+
+   1. Exercise 5 - ✅
+   2. Exercise 6 - ✅
+   3. Exercise 7 - ✅
 
 3. **Chapter 3**
-    
-    1. Exercise 8 - :heavy_check_mark:
-    2. Exercise 9 - :heavy_check_mark:
-    3. Exercise 10 - :heavy_check_mark:
-    4. Exercise 11 - :heavy_check_mark:
-    5. Exercise 12 - :heavy_check_mark:
-    6. Exercise 13 - :heavy_check_mark:
-    7. Exercise 14 - :heavy_check_mark:
+
+   1. Exercise 8 - ✅
+   2. Exercise 9 - ✅
+   3. Exercise 10 - ✅
+   4. Exercise 11 - ✅
+   5. Exercise 12 - ✅
+   6. Exercise 13 - ✅
+   7. Exercise 14 - ✅
+   8. Exercise 15 - ✅
 
 4. **Chapter 4**
-    
-    1. Exercise 15 - :heavy_check_mark:
-    2. Exercise 16 - :heavy_check_mark:
-    3. Exercise 17 - :heavy_check_mark:
-    4. Exercise 18 - :heavy_check_mark:
-    5. Exercise 19 - :heavy_check_mark:
-    6. Exercise 20 - :heavy_check_mark:
 
+   1. Exercise 16 - ✅
+   2. Exercise 17 - ✅
+   3. Exercise 18 - ✅
+   4. Exercise 19 - ✅
+   5. Exercise 20 - ✅
+   6. Exercise 21 - ✅
+   7. Exercise 22 - ✅
+   8. Exercise 23 - ✅
 
 5. **Chapter 5**
-     
-     1. Exercise 21 - :heavy_check_mark:
-     2. Exercise 22 - :heavy_check_mark:
-     3. Exercise 23 - :heavy_check_mark:
-     4. Exercise 24 - :heavy_check_mark:
-     5. Exercise 25 - :heavy_check_mark:
-   
+   1. Exercise 24 - ✅
+   2. Exercise 25 - ✅
+   3. Exercise 26 - ✅
+   4. Exercise 27 - ✅
+   5. Exercise 28 - ✅
+   6. Exercise 29 - ✅
+   7. Exercise 30 - ✅

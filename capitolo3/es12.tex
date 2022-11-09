@@ -1,2 +1,91 @@
 \subsection{Esercizio 12}
-\lstinputlisting[language=Matlab]{capitolo3/qrsolve.m}
+Scrivere una function Matlab,
+\begin{lstlisting}
+function [x,nr] = miaqr(A, b)
+\end{lstlisting}
+che, data in ingresso la matrice $A$ $m \times n$, con $m \geq n = rank(A)$, ed un vettore $b$ di lunghezza
+$m$, calcoli la soluzione del sistema lineare $Ax = b$ nel senso dei minimi quadrati e, inoltre, la
+norma, $nr$, del corrispondente vettore residuo. Curare particolarmente la scrittura e l'efficienza della
+\textit{function}. Validare la \textit{function} \lstinline{miaqr} su due esempi non banali,
+generati casualmente, confrontando la soluzione ottenuta con quella calcolata con l'operatore Matlab.
+\newline \textbf{Soluzione:}
+
+\lstinputlisting{matlab/capitolo3/miaqr.m}
+Eseguendo lo script \nameref{cod:12} si ottengono i risultati contenuti nelle
+tabelle \ref{tab:12_1} e \ref{tab:12_2}.
+
+Prima sistema lineare è
+\[
+   \begin{bmatrix}
+      3  & 9 & 8 & 9 \\
+      4  & 1 & 9 & 1 \\
+      10 & 2 & 6 & 1 \\
+      9  & 3 & 8 & 9
+   \end{bmatrix}
+   \begin{bmatrix}
+      x_{1} \\
+      x_{2} \\
+      x_{3} \\
+      x_{4}
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+      3 \\
+      1 \\
+      1 \\
+      9
+   \end{bmatrix}
+\]
+Invece seconda sistema lineare è
+\[
+   \begin{bmatrix}
+      6  & 6 \\
+      10 & 7 \\
+      6  & 9
+   \end{bmatrix}
+   \begin{bmatrix}
+      x_{1} \\
+      x_{2}
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+      10 \\
+      8  \\
+      10
+   \end{bmatrix}
+\]
+Eseguendo la funzione creata \lstinline{miaqr} e comando interno di
+matlab \lstinline{r\c}, possiamo confrontare il risultati di funzione
+scritta con quello realizzato nativamente in matlab.
+\begin{table}[ht]
+   \centering
+   \renewcommand\arraystretch{2}
+   \begin{tabular}{|l | c c |}
+      \hline
+      $x$     & $miaqr$                & $A \backslash b$       \\
+      \hline
+      $x_{1}$ & 1.491803278688525e-01  & 1.491803278688524e-01  \\
+      $x_{2}$ & -8.508196721311473e-01 & -8.508196721311487e-01 \\
+      $x_{3}$ & 1.475409836065585e-02  & 1.475409836065600e-02  \\
+      $x_{4}$ & 1.121311475409836e+00  & 1.121311475409836e+00  \\
+      \hline
+   \end{tabular}
+   \caption{Confronto di soluzioni di \lstinline{miaqr} e $A \backslash b$ per primo sistema}
+   \label{tab:12_1}
+\end{table}
+\FloatBarrier
+\begin{table}[ht]
+   \centering
+   \renewcommand\arraystretch{2}
+   \begin{tabular}{| l | c c |}
+      \hline
+      $x$     & $miaqr$               & $A \backslash b$      \\
+      \hline
+      $x_{1}$ & 8.130081300812995e-02 & 8.130081300813012e-02 \\
+      $x_{2}$ & 1.162601626016260e+00 & 1.162601626016260e+00 \\
+      \hline
+   \end{tabular}
+   \caption{Confronto di soluzioni di \lstinline{miaqr} e $A \backslash b$ per secondo sistema}
+   \label{tab:12_2}
+\end{table}
+\FloatBarrier

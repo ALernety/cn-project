@@ -2,12 +2,13 @@
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{graphicx}
-\usepackage[english]{babel}
+\usepackage[italian]{babel}
+\usepackage{cancel}
 \usepackage[T1]{fontenc}
 \usepackage{url}
 \usepackage{import}
 \usepackage{nameref}
-\usepackage{framed  }
+\usepackage{framed}
 \usepackage{multirow}
 \usepackage{color}
 \usepackage[numbered, framed]{matlab-prettifier}
@@ -18,7 +19,8 @@
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{listings}
 \usepackage{titling}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{placeins}
 
 
 \let\ph\mlplaceholder % shorter macro
@@ -29,10 +31,10 @@
 \newcommand{\enb}{\end{nobreak}}
 
 \lstset{
-  style              = Matlab-editor,
-  basicstyle         = \mlttfamily,
-  escapechar         = ",
-  mlshowsectionrules = true,
+  style               = Matlab-editor,
+  language            = Matlab,
+  escapechar          = ",
+  mlshowsectionrules  = true,
 }
 
 
@@ -42,16 +44,22 @@
   \includegraphics[width=\textwidth/4]{logo_unifi.png}\\[\bigskipamount]
 }
 \posttitle{\end{center}}
-\date{}
+\date{\today}
+\input{names.env.tex}
 
 \begin{document}
 
 
 
-\title{\vspace{2cm}Elaborato di\\ \textbf{Calcolo Numerico}\\ Anno Accademico 2019/2020\vspace{3cm}}
+\title{
+  \vspace{2cm}
+  Elaborato di\\
+  \textbf{Calcolo Numerico}\\
+  Anno Accademico 2021/2022
+  \vspace{3cm}
+}
 
-\author{Niccolò \emph{Piazzesi} - \texttt{6335623} - \textit{niccolo.piazzesi@stud.unifi.it}
-   \and Pietro \emph{Bernabei} - \texttt{6291312} - \textit{pietro.bernabei@stud.unifi.it}}
+\author{\authors{}}
 
 
 \maketitle

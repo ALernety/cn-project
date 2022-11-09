@@ -1,2 +1,93 @@
 \subsection{Esercizio 8}
-\lstinputlisting[language=Matlab]{capitolo3/palu.m}
+Scrivere una function Matlab,
+\begin{lstlisting}
+function x = mialu(A, b)
+\end{lstlisting}
+che, data in ingresso una matrice $A$ ed un vettore $b$, calcoli la soluzione
+del sistema lineare $Ax = b$ con il metodo di fattorizzazione $LU$ con \textit{pivoting} parziale.
+Curare particolarmente la scrittura e l'efficienza della function,
+e validarla su due esempi non banali, generati casualmente,
+di cui sia nota la soluzione.
+\newline \textbf{Soluzione:}
+
+\lstinputlisting{matlab/capitolo3/mialu.m}
+Eseguendo lo script \nameref{cod:8} si ottengono i risultati contenuti nelle
+tabelle \ref{tab:8_1} e \ref{tab:8_2}.
+
+Prima sistema lineare è
+\[
+   \begin{bmatrix}
+      5 & 2 & 2 & 6  \\
+      5 & 1 & 9 & 10 \\
+      6 & 2 & 6 & 6  \\
+      2 & 5 & 3 & 7
+   \end{bmatrix}
+   \begin{bmatrix}
+      x_{1} \\
+      x_{2} \\
+      x_{3} \\
+      x_{4}
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+      4 \\
+      2 \\
+      5 \\
+      8
+   \end{bmatrix}
+\]
+Invece seconda sistema lineare è
+\[
+   \begin{bmatrix}
+      3 & 10 & 1  \\
+      2 & 7  & 8  \\
+      8 & 2  & 10
+   \end{bmatrix}
+   \begin{bmatrix}
+      x_{1} \\
+      x_{2} \\
+      x_{3}
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+      1 \\
+      5 \\
+      10
+   \end{bmatrix}
+\]
+Eseguendo la funzione creata \lstinline{mialu} e comando interno di
+matlab \lstinline{A\b}, possiamo confrontare il risultati di funzione
+scritta con quello realizzato nativamente in matlab.
+\begin{table}[ht]
+   \centering
+   \renewcommand\arraystretch{2}
+   \begin{tabular}{|l | c c |}
+      \hline
+      $x$     & $mialu$                & $A \backslash b$       \\
+      \hline
+      $x_{1}$ & 4.015151515151514e-01  & 4.015151515151514e-01  \\
+      $x_{2}$ & 1.789772727272728e+00  & 1.789772727272728e+00  \\
+      $x_{3}$ & 1.496212121212120e-01  & 1.496212121212121e-01  \\
+      $x_{4}$ & -3.143939393939394e-01 & -3.143939393939393e-01 \\
+      \hline
+   \end{tabular}
+   \caption{Confronto di soluzioni di \lstinline{mialu} e $A \backslash b$ per primo sistema}
+   \label{tab:8_1}
+\end{table}
+\FloatBarrier
+\begin{table}[ht]
+   \centering
+   \renewcommand\arraystretch{2}
+   \begin{tabular}{| l | c c |}
+      \hline
+      $x$     & $mialu$                & $A \backslash b$       \\
+      \hline
+      $x_{1}$ & 5.345454545454547e-01  & 5.345454545454547e-01  \\
+      $x_{2}$ & -1.200000000000000e-01 & -1.200000000000000e-01 \\
+      $x_{3}$ & 5.963636363636363e-01  & 5.963636363636363e-011 \\
+      \hline
+   \end{tabular}
+   \caption{Confronto di soluzioni di \lstinline{mialu} e $A \backslash b$ per secondo sistema}
+   \label{tab:8_2}
+\end{table}
+\FloatBarrier

@@ -1,29 +1,45 @@
 \subsection{Esercizio 10}
+\label{subsec:es10}
+Data la function Matlab
+\lstinputlisting{matlab/capitolo3/linsis.m}
+che crea sistemi lineari casuali con soluzione nota, risolvere, utilizzando la \textit{function} \lstinline{mialu}, i sistemi
+lineari generati da \lstinline{[A,b]=linsis(10,1)} e \lstinline{[A,b]=linsis(10,10)}. Commentare l'accuratezza dei
+risultati ottenuti, dandone spiegazione esaustiva.
+\newline \textbf{Soluzione:}
 
-\begin{table}[h]
-\begin{tabular}{|l l l|}
-        \hline
-        i & Sigma  &  Norma\\
-        \hline
-        1 & $10^{-1}$  &  8.9839e-15\\
-        2 & $10^{1}$ &  1.4865e-14 \\
-        3 & $10^{3}$ &  1.3712e-12 \\
-        4 & $10^{5}$ &  1.2948e-10 \\
-        5 & $10^{7}$ &  5.3084e-09 \\
-        6 & $10^{9}$ &  1.0058e-06 \\
-        7 & $10^{11}$ &  8.5643e-05 \\
-        8 & $10^{13}$ &  0.0107 \\
-        9 & $10^{15}$ &  0.9814 \\
-        10 & $10^{17}$ & 4.1004e+03\\
-        \hline
-\end{tabular}
-\caption{valori approssimati}
-\label{tab::1}     
+Eseguendo lo script \nameref{cod:10} si ottengono il risultato contenuto nella
+tabella \ref{tab:10}.
+
+\begin{table}[ht]
+  \centering
+  \renewcommand\arraystretch{2}
+  \begin{tabular}{|l | c c |}
+    \hline
+    Risultato aspettato & $linsis(10, 1)$       & $linsis(10, 10)$       \\
+    \hline
+    1                   & 9.999999999999953e-01 & -3.076447708385681e+02 \\
+    2                   & 2.000000000000004e+00 & 3.866526443048850e+02  \\
+    3                   & 3.000000000000000e+00 & 1.843572773667685e+02  \\
+    4                   & 4.000000000000005e+00 & -3.424372553841305e+02 \\
+    5                   & 5.000000000000001e+00 & 1.855084828402995e+02  \\
+    6                   & 6.000000000000001e+00 & 5.519206266267746e+02  \\
+    7                   & 6.999999999999997e+00 & -1.377749853666923e+02 \\
+    8                   & 8.000000000000009e+00 & 7.063244889082213e+01  \\
+    9                   & 9.000000000000005e+00 & -4.210526315789573e+00 \\
+    10                  & 1.000000000000000e+01 & -6.080000000000002e+02 \\
+    \hline
+  \end{tabular}
+  \caption{Confronto di soluzioni per \lstinline{linsis(10, 1)} e \lstinline{linsis(10, 10)} usando \lstinline{mialu}}
+  \label{tab:10}
 \end{table}
-Elementi tabella:
-\begin{itemize}
-        \item i=indice di iterazione
-        \item Sigma = valore calcolato e usato dalla funzione linsis() per introdurre un errore nella matrice generata A e nel suo vettore dei termini noti b. Cresce al crescere dell'interazione.
-        \item Norma= valore della distanza tra il vettore x, soluzione del sistema lineare LU*x=b, e il vettore xref, soluzione corretta del sistema.
-\end{itemize}	
-Da questa tabella quindi si può notare come all'incremento della interazione, e quindi della sigma, l'errore nelle soluzioni  cresce, quasi proporzionalmente come sigma, con un fattore di $10^{2}$;
+\FloatBarrier
+Nel \textbf{caso $linsis(10, 1)$} notiamo che l'errore é molto piccolo.
+
+Considerando che la soluzione con perturbazioni consiste nel risolvere il sistema
+lineare $A(\epsilon)x(\epsilon) = b(\epsilon)$, dato che $\epsilon \approx 0 \rightarrow x(0) = x$
+la soluzione senza perturbazione, o comunque dato $\epsilon \approx 0$ quasi senza perturbazione.
+Infatti eseguendo il comando \lstinline{cond} otteniamo $1.000000000000000e+01$.
+
+Nel \textbf{caso $linsis(10, 10)$} calcolando il numero di condizionamento
+$K(A^T\cdot A) = \|A^T A\|\cdot\|(A^T A)^{-1}\|$ abbiamo che $K = 6.345578386010926e+19 $.
+Avendo $K \gg 1$ si ha un mal condizionamento del problema.

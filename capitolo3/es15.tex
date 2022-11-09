@@ -1,0 +1,51 @@
+\subsection{Esercizio 15}
+Usare la \textit{function} del precedente esercizio per risolvere, a partire dal vettore iniziale
+nullo, i seguenti sistemi nonlineari, utilizzando tolleranze $tol = 1e-3$, $1e-8$, $1e-13$:
+\begin{eqnarray*}
+    f_1(x) = \left(\begin{array}{c}
+        (x^{2}_{1} + 1)(x_2 - 2) \\
+        exp(x_1 - 1) + exp(x_2 - 2) - 2
+    \end{array}\right), & & f_2(x) = \left(\begin{array}{c}
+        x_1 - x_2x_3                   \\
+        exp(x_1 + x_2 + x_3 - 3) - x_2 \\
+        x_1 + x_2 + 2x_3 - 4
+    \end{array}\right).
+\end{eqnarray*}
+Tabulare i risultati ottenuti, commentandone l'accuratezza.
+\newline \textbf{Soluzione:}
+
+Eseguendo lo script \nameref{cod:15} si ottengono i risultati contenuti nella tabella \ref{tab:15}
+e nella figura \ref{fig:es15}.
+\begin{table}[ht]
+    \centering
+    \renewcommand\arraystretch{2}
+    \resizebox{\columnwidth}{!}{
+        \begin{tabular}{|l l l l l|}
+            \hline
+            Funzione   & \vline & tolleranza$=10^{-3}$  & tolleranza$=10^{-8}$  & tolleranza$=10^{-13}$ \\
+            \hline
+            $f_1(x_1)$ & \vline & 1.000000007127784e+00 & 1.000000000000000e+00 & 1.000000000000000e+00 \\
+            $f_1(x_2)$ & \vline & 2.000000000000000e+00 & 2.000000000000000e+00 & 2.000000000000000e+00 \\
+            \hline
+            $f_2(x_1)$ & \vline & 1.000000000000042e+00 & 1.000000000000000e+00 & 1.000000000000000e+00 \\
+            $f_2(x_2)$ & \vline & 9.999999999999842e-01 & 1.000000000000000e+00 & 1.000000000000000e+00 \\
+            $f_2(x_3)$ & \vline & 9.999999999999871e-01 & 1.000000000000000e+00 & 1.000000000000000e+00 \\
+            \hline
+        \end{tabular}
+    }
+    \caption{Soluzioni di sistemi nonlineari usando metodo di Newton}
+    \label{tab:15}
+\end{table}
+\FloatBarrier
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=16cm,height=10cm,keepaspectratio]{capitolo3/es15_figure.png}
+    \caption{Iterazioni richieste per svolgere sistema nonlineare usando metodo di Newton}
+    \label{fig:es15}
+\end{figure}
+\FloatBarrier
+Come si vede da risultati ottenuti l'accuratezza di funzione di esercizio precedente
+rispetta la tolleranza richiesta, quindi criterio di arresto è stato scelto in modo giusto.
+
+Parlando di iterazioni richieste, si vede, che in funzione con più esponenziali, cioè $f_{1}$
+sono richiesti più iterazioni dato la più alta complessità dei calcoli.

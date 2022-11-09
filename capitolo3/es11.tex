@@ -1,2 +1,44 @@
 \subsection{Esercizio 11}
-\lstinputlisting[language=Matlab]{capitolo3/myqr.m}
+Risolvere, utilizzando la \textit{function} \lstinline{mialdlt}, i sistemi
+lineari generati da \lstinline{[A,b]=linsis(10, 1, 1)} e \lstinline{[A,b]=linsis(10, 10, 1)}.
+Commentare l'accuratezza dei risultati ottenuti, dandone spiegazione esaustiva.
+\newline \textbf{Soluzione:}
+
+Eseguendo lo script \nameref{cod:11} si ottengono il risultato contenuto nella
+tabella \ref{tab:11}.
+
+\begin{table}[ht]
+  \centering
+  \renewcommand\arraystretch{2}
+  \begin{tabular}{|l | c c |}
+    \hline
+    Risultato aspettato & $linsis(10, 1, 1)$    & $linsis(10, 10, 1)$ \\
+    \hline
+    1                   & 9.999999999999953e-01 &                     \\
+    2                   & 2.000000000000004e+00 &                     \\
+    3                   & 3.000000000000000e+00 & Errore!             \\
+    4                   & 4.000000000000005e+00 & Matrice non è       \\
+    5                   & 5.000000000000001e+00 & simmetrica definita \\
+    6                   & 6.000000000000001e+00 & positiva            \\
+    7                   & 6.999999999999997e+00 &                     \\
+    8                   & 8.000000000000009e+00 &                     \\
+    9                   & 9.000000000000005e+00 &                     \\
+    10                  & 1.000000000000000e+01 &                     \\
+    \hline
+  \end{tabular}
+  \caption{Confronto di soluzioni per \lstinline{linsis(10, 1)} e \lstinline{linsis(10, 10)} usando \lstinline{mialdl}}
+  \label{tab:11}
+\end{table}
+\FloatBarrier
+Nel \textbf{caso $linsis(10, 1, 1)$} notiamo che l'errore é molto piccolo.
+
+Considerando che la soluzione con perturbazioni consiste nel risolvere il sistema
+lineare $A(\epsilon)x(\epsilon) = b(\epsilon)$, dato che $\epsilon \approx 0 \rightarrow x(0) = x$
+la soluzione senza perturbazione, o comunque dato $\epsilon \approx 0$ quasi senza perturbazione.
+Infatti eseguendo il comando \lstinline{cond} otteniamo $9.999999999999996e+00$.
+
+Nel \textbf{caso $linsis(10, 10, 1)$} ci da errore \lstinline{The matrix provided is not symmetric and postive definite!}
+che significa che matrice non è simmetrica definita positiva.
+Come nel esercizo precedente calcolando il numero di condizionamento
+$K(A^T\cdot A) = \|A^T A\|\cdot\|(A^T A)^{-1}\|$ abbiamo che $K = 7.620046936967337e+32 $.
+Avendo $K \gg 1$ si ha un mal condizionamento del problema.

@@ -1,2 +1,88 @@
 \subsection{Esercizio 9}
-\lstinputlisting[language=Matlab]{capitolo3/LUsolve.m}
+Scrivere una function Matlab,
+\begin{lstlisting}
+function x = mialdl(A, b)
+\end{lstlisting}
+che, dati in ingresso una matrice sdp $A$ ed un vettore $b$, calcoli la soluzione
+del corrispondente sistema lineare utilizzando la fattorizzazione $LDL^T$.
+Curare particolarmente la scrittura e l'efficienza della function,
+e validarla su due esempi non banali, generati casualmente, di cui sia nota la soluzione.
+\newline \textbf{Soluzione:}
+
+\lstinputlisting{matlab/capitolo3/mialdl.m}
+Eseguendo lo script \nameref{cod:9} si ottengono i risultati contenuti nelle
+tabelle \ref{tab:9_1} e \ref{tab:9_2}.
+
+Prima sistema lineare è
+\[
+   \begin{bmatrix}
+      166 & 105 & 161 & 132 \\
+      105 & 119 & 151 & 98  \\
+      161 & 151 & 239 & 144 \\
+      132 & 98  & 144 & 131
+   \end{bmatrix}
+   \begin{bmatrix}
+      x_{1} \\
+      x_{2} \\
+      x_{3} \\
+      x_{4}
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+      5  \\
+      10 \\
+      6  \\
+      2
+   \end{bmatrix}
+\]
+Invece seconda sistema lineare è
+\[
+   \begin{bmatrix}
+      45 & 27 \\
+      27 & 18
+   \end{bmatrix}
+   \begin{bmatrix}
+      x_{1} \\
+      x_{2}
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+      2 \\
+      5
+   \end{bmatrix}
+\]
+Eseguendo la funzione creata \lstinline{mialdl} e comando interno di
+matlab \lstinline{A\b}, possiamo confrontare il risultati di funzione
+scritta con quello realizzato nativamente in matlab.
+\begin{table}[ht]
+   \centering
+   \renewcommand\arraystretch{2}
+   \begin{tabular}{|l | c c |}
+      \hline
+      $x$     & $mialdl$               & $A \backslash b$       \\
+      \hline
+      $x_{1}$ & 9.752409097697867e-02  & 9.752409097697871e-02  \\
+      $x_{2}$ & 2.974225536634357e-01  & 2.974225536634358e-01  \\
+      $x_{3}$ & -1.315833858151011e-01 & -1.315833858151011e-01 \\
+      $x_{4}$ & -1.608594100046056e-01 & -1.608594100046056e-01 \\
+      \hline
+   \end{tabular}
+   \caption{Confronto di soluzioni di \lstinline{mialdl} e $A \backslash b$ per primo sistema}
+   \label{tab:9_1}
+\end{table}
+\FloatBarrier
+\begin{table}[ht]
+   \centering
+   \renewcommand\arraystretch{2}
+   \begin{tabular}{| l | c c |}
+      \hline
+      $x$     & $mialdl$               & $A \backslash b$       \\
+      \hline
+      $x_{1}$ & -1.222222222222222e+00 & -1.222222222222221e+00 \\
+      $x_{2}$ & 2.111111111111110e+00  & 2.111111111111110e+00  \\
+      \hline
+   \end{tabular}
+   \caption{Confronto di soluzioni di \lstinline{mialdl} e $A \backslash b$ per secondo sistema}
+   \label{tab:9_2}
+\end{table}
+\FloatBarrier

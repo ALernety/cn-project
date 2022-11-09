@@ -1,28 +1,49 @@
 \subsection{Esercizio 6}
-Eseguendo lo script \nameref{cod:6}si ottengono i risultati contenuti nella tabella \ref{tab:6}
+Utilizzare le $function$ del precedente esercizio per determinare una approssimazione
+della radice della funzione
+\[
+        f(x) = x - cos(\frac{\pi}{2}x),
+\]
+per $tol = 10^{-3}, 10^{-6}, 10^{-9}, 10^{-12},$ partendo da $x_0 = 1$
+(e $x_1 = 0.99$ per il metodo delle secanti). Tabulare i risultati,
+in modo da confrontare le iterazioni richieste da ciascun metodo. Commentare
+il relativo costo computazionale, in termini di valutazioni funzionali richieste.
+\newline \textbf{Soluzione:}
+
+Eseguendo lo script \nameref{cod:6} si ottengono i risultati contenuti nella tabella \ref{tab:6}
 e nella figura \ref{fig:es6}. Come si può notare, il metodo di newton e il metodo delle secanti
-convergono molto più rapidamente del metodo di bisezione e del metodo delle corde. 
-\begin{table}[h]
+convergono molto più rapidamente del metodo di bisezione e del metodo delle corde.
+\begin{table}[ht]
+        \centering
         \renewcommand\arraystretch{2}
-\begin{tabular}{|l l l l l|}
-        \hline
-        Metodo & tolleranza$=10^{-3}$  & tolleranza$=10^{-6}$ & tolleranza$=10^{-9}$ & tolleranza$=10^{-12}$ \\
-        \hline
-        bisezione & 0.739257812500000 &  0.739085197448730  & 0.739085133187473 &  0.739085133215667\\
-        newton   &  0.739085133385284 &  0.739085133215161  & 0.739085133215161 & 0.739085133215161 \\
-        corde    &  0.739567202212256  & 0.739084549575213 & 0.739085132739254 & 0.739085133215737 \\
-        secanti  &  0.739085133215001  & 0.739085133215161  &  0.739085133215161  &  0.739085133215161 \\
-        \hline
-\end{tabular}
-\caption{valori approssimati da bisezione, newton, secanti, corde}
-\label{tab:6}     
+        \resizebox{\columnwidth}{!}{
+                \begin{tabular}{|l l l l l|}
+                        \hline
+                        Metodo                &        & newton                & secanti               & steffensen            \\
+                        \hline
+                        tolleranza$=10^{-3}$  & \vline & 5.946116463605413e-01 & 5.946184776717105e-01 & 5.946116811419248e-01 \\
+                        tolleranza$=10^{-6}$  & \vline & 5.946116440568356e-01 & 5.946116440568420e-01 & 5.946116440568371e-01 \\
+                        tolleranza$=10^{-9}$  & \vline & 5.946116440568356e-01 & 5.946116440568356e-01 & 5.946116440568356e-01 \\
+                        tolleranza$=10^{-12}$ & \vline & 5.946116440568356e-01 & 5.946116440568356e-01 & 5.946116440568356e-01 \\
+                        \hline
+                \end{tabular}
+        }
+        \caption{Valori approssimati per $x - cos$ con i metodi di Newton, secanti e Steffensen}
+        \label{tab:6}
 \end{table}
-\newpage
-\begin{figure}[h!]
-\includegraphics[scale=0.7]{capitolo2/iter.png}
-\caption{iterazioni richieste}
-\label{fig:es6}
+\FloatBarrier
+\begin{figure}[!ht]
+        \centering
+        \includegraphics[width=16cm,height=10cm,keepaspectratio]{capitolo2/es6_figure.png}
+        \caption{Valori approssimati per $x - cos$ con i metodi di Newton, secanti e Steffensen}
+        \label{fig:es6}
 \end{figure}
-
-
-
+\FloatBarrier
+\textbf{Costo computazionale}
+È possibile valutare i costi computazionali dei algoritmi verificando il numero
+di funzioni richiamate all'interno dei codici, mediante feval:
+\begin{itemize}
+        \item Newton: $2i$, $i=1:maxit$;
+        \item Secanti: $1 + i$, $i=1:maxit$;
+        \item Steffensen: $2i$, $i=1:maxit$;
+\end{itemize}

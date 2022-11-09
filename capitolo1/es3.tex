@@ -1,8 +1,17 @@
 \subsection{Esercizio 3}
-Quando si esegue $a-a+b$ il risultato è $100$ mentre quando si esegue $a+b-a$ si ottiene $0$. La differenza dei risultati è dovuta al fenomeno della cancellazione
-numerica:
-\begin{itemize}
-    \item nel primo caso la sottrazione avviene sullo stesso numero $a=10^{20}$. Sottrare un numero da se stesso ha sempre risultato esatto $0$ e quindi il risultato finale è corretto
-    \item nel secondo caso la sottrazione avviente tra i termini $a+b = 10^{20} + 100$ e $a = 10^{20}$. a+b ha le prime 18 cifre in comune con a e , a causa degli errori di approssimazione, le ultime tre cifre
-    vengono cancellate dalla sottrazione, dando 0 come risultato finale.
-\end{itemize}
+Eseguire il seguente script Matlab:
+\begin{lstlisting}
+format long e
+(1+(1e-14-1))*1e14
+\end{lstlisting}
+Spiegare i risultati ottenuti.
+\newline \textbf{Soluzione:}
+
+\begin{lstlisting}
+>> format long e
+>> (1+(1e-14-1))*1e14
+ans = 9.992007221626409e-01
+\end{lstlisting}
+Il risultato è dovuto alla cosiddetta \textbf{cancellazione numerica}:
+i due addendi sono rappresentati in macchina con piena accuratezza, a causa però del
+malcondizionamento del problema ($k \gg 1$), il risultato non é corretto.
